@@ -1,0 +1,32 @@
+#!/bin/bash
+
+set -e
+
+BASEDIR=$(dirname $0)
+BUILD="$BASEDIR"/../build
+SRC="$BASEDIR"/../src
+LOCALES="$BASEDIR"/../locales
+
+git submodule update --init --recursive
+
+. "$BASEDIR"/locales
+jsxgettext="$BASEDIR"/../ext/jsxgettext/lib/cli.js
+( cd "$BASEDIR"/../ext/jsxgettext ; yarn install )
+
+msgmerge=msgmerge
+if [ -e /usr/local/opt/gettext/bin/msgmerge ] ; then
+    msgmerge=/usr/local/opt/gettext/bin/msgmerge
+fi
+
+mkdir -p "$BUILD"
+find "$SRC" -name "*.js" -o -name "*.jsx" \
+    | xargs $jsxgettext -k __ -o "$BUILD"/messages.pot
+
+for locale in $locales ; do
+    if [ -e "$LOCALES"/${locale}.po ] ; then
+        $msgmerge -o "$BUILD"/${locale}.po "$LOCALES"/${locale}.po "$BUILD"/messages.pot
+    fi
+done
+
+cp "$BUILD"/*.po "$LOCALES"
+

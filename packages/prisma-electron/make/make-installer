@@ -1,0 +1,65 @@
+#!/bin/bash
+
+cd $(dirname $0)/..
+
+PACKAGE=dist/package
+DIST=dist/installer
+
+function field {
+    echo $(grep \"$1\" build/app/main/brand.json | cut -f 4 -d\")
+}
+
+# which os are we targeting? No OS sent in means build  all
+case $1 in 
+    "mac"|"macos"|"darwin"|"macOS")
+        OS="MAC"
+        ;;
+    "windows"|"win")
+        OS="WIN"
+        ;;
+    "linux") 
+        OS="LINUX"
+        ;;
+    *)
+        OS="ALL"
+        ;;
+esac
+
+echo "Building Installer [OS=$OS]"
+
+NAME=$(field name)
+SLUG=$(field slug)
+VERSION=$(field version)
+COPYRIGHT=$(field copyright)
+COMMIT="git$(field commit)"
+COMPANY=$(field company)
+TIMESTAMP=$(field timestamp)
+
+MARK="$VERSION-$TIMESTAMP-$COMMIT"
+
+# if [ "$OS" == "ALL" ] || [ "$OS" == "LINUX" ] ; then
+#     mkdir -p $DIST/macOS;
+#     node_modules/.bin/electron-packager build/app $SLUG --out dist/package/linux --overwrite \
+#         --asar \
+#         --platform linux --arch x64 \
+#         --icon build/app/src/lib/brand/app_icon.png \
+#         --app-copyright "$COPYRIGHT" \
+#         --app-version "$VERSION" \
+#         --build-version "$COMMIT";
+#     cd dist/package/linux; tar zcf "$SLUG-linux-x64-$MARK.tar.gz" "$SLUG-linux-x64"; cd - ;
+# fi
+
+if [ "$OS" == "ALL" ] || [ "$OS" == "MAC" ] ; then
+    # http://www.macgazine.net/2015/01/how-to-convert-icons-file-png-to-icns.html
+    mkdir -p $DIST/macOS;
+    node_modules/.bin/electron-installer-dmg "$PACKAGE/macOS/$NAME-darwin-x64/$NAME.app" "$NAME-$VERSION" \
+        --overwrite \
+        --out $DIST/macOS/ \
+        --icon brands/generic/app_icon.icns;
+fi
+
+if [ "$OS" == "ALL" ] || [ "$OS" == "WIN" ] ; then
+    mkdir -p $DIST/windows;
+    node make/create-windows-installer.js $PACKAGE/windows/$SLUG-win32-x64 $SLUG.exe $DIST/windows/ "$NAME" "$COMPANY"; 
+fi
+

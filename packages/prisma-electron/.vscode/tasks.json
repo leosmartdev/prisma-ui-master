@@ -1,0 +1,102 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "npm",
+      "script": "build:watch",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": {
+        "owner": "webpack",
+        "fileLocation": "relative",
+        "pattern": [
+          {
+            "regexp": "^ERROR: in ([^\\s].*)$",
+            "file": 1,
+          },
+          {
+            "regexp": "^\\s+(\\d+):(\\d+)\\s+(error|warning|info)\\s+(.*)$",
+            "line": 1,
+            "column": 2,
+            "severity": 3,
+            "message": 4
+          },
+        ],
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "^Compilation Starting...$",
+          "endsPattern": "Compilation finished"
+        }
+      },
+      "isBackground": true
+    },
+    {
+      "type": "npm",
+      "script": "test:coverage",
+      "problemMatcher": []
+    },
+    {
+      "label": "tms recycle",
+      "type": "shell",
+      "command": "vagrant ssh -c tms-recycle",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "tms reycle rebuild",
+      "type": "shell",
+      "command": "vagrant ssh -c 'tms-recycle --rebuild'",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "tmsd status",
+      "type": "shell",
+      "command": "vagrant ssh -c 'tmsd --status'",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "tmsd start",
+      "type": "shell",
+      "command": "vagrant ssh -c 'tmsd --start'",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "tmsd stop",
+      "type": "shell",
+      "command": "vagrant ssh -c 'tmsd --stop'",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "vagrant up",
+      "type": "shell",
+      "command": "vagrant up",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      },
+      "problemMatcher": []
+    }
+  ]
+}

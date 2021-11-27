@@ -1,0 +1,45 @@
+site_name: PRISMA UI
+repo_name: 'orolia/prisma-ui'
+repo_url: 'https://github.com/orolia/prisma-ui'
+edit_uri: blob/develop/docs/
+docs_dir: docs
+site_dir: dist/documentation_site/
+dev_addr: '0.0.0.0:8000'
+copyright: 2019 Orolia
+extra_css:
+  - 'stylesheets/extra.css'
+theme:
+  name: 'material'
+  logo: 'images/prisma-logo.svg'
+  feature:
+    tabs: true
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - toc:
+      permalink: true
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+nav:
+  - Home: index.md
+  - CHANGELOG: CHANGELOG.md
+  - Releases:
+    - Releases: https://documentation.mcmurdo.io/releases/stable/
+  - Developers:
+    - Home: developer/index.md
+    - APIs:
+      - REST API: https://orolia-prisma-c2.postman.co/collections/352230-e1e86aaf-b2c3-4e3b-b718-a74f4b7a0281?workspace=44d15d8d-0a82-4c95-8e74-d196d18dd868
+    - Storybooks:
+      - Latest Stable:
+        - prisma-electron: https://storybook.mcmurdo.io/prisma-electron/latest/
+        - "@prisma/map": https://storybook.mcmurdo.io/prisma-map/latest/
+        - "@prisma/ui": https://storybook.mcmurdo.io/prisma-ui/latest/
+      - Nightly:
+        - prisma-electron: https://storybook.mcmurdo.io/prisma-electron/nightly/
+        - "@prisma/map": https://storybook.mcmurdo.io/prisma-map/nightly/
+        - "@prisma/ui": https://storybook.mcmurdo.io/prisma-ui/nightly/
+    - Doc Site: mkdocs.md
+  - PRISMA Documentation:
+    - Home: https://documentation.mcmurdo.io/latest/

@@ -1,0 +1,355 @@
+[
+  {
+    "viewId": "unnamed3",
+    "extent": {
+      "minLon": 103.82112884524798,
+      "minLat": 1.077344335873235,
+      "maxLon": 104.17887115482438,
+      "maxLat": 1.4226443122617383
+    }
+  },
+  {
+    "status": "Current",
+    "feature": {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [104.16634166666667, 1.2868983333333333] },
+      "properties": {
+        "crs": "EPSG:4326",
+        "databaseId": "5b439215d680052061ad35f3",
+        "metadata": { "name": "VALENTE VENUS       ", "shipAndCargoType": 70 },
+        "registryId": "7f967bed52478dcc0492520ebde19cd1",
+        "target": {
+          "course": 262,
+          "heading": 262,
+          "mmsi": "354905000",
+          "navigationalStatus": 0,
+          "rateOfTurn": 0,
+          "speed": 12.9,
+          "time": "2018-07-09T16:49:25.751161824Z"
+        },
+        "trackId": "2b74e3b63c9ceef23c8a57fdf86bab76",
+        "type": "track:AIS"
+      },
+      "id": "7f967bed52478dcc0492520ebde19cd1"
+    },
+    "counts": { "total": 1, "visible": 0 }
+  },
+  {
+    "status": "Current",
+    "feature": {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [103.89759928863795, 1.1640634670880459] },
+      "properties": {
+        "crs": "EPSG:4326",
+        "databaseId": "5b439215d680052061ad35f5",
+        "registryId": "",
+        "target": {
+          "course": 127.8,
+          "heading": 0,
+          "rateOfTurn": 0,
+          "speed": 0.2,
+          "time": "2018-07-09T16:49:25.751067167Z"
+        },
+        "trackId": "2b92216922d495131796f340c321a6ec",
+        "type": "track:Radar"
+      },
+      "id": "2b92216922d495131796f340c321a6ec"
+    },
+    "counts": { "total": 2, "visible": 1 }
+  },
+  {
+    "status": "Current",
+    "feature": {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [103.89759928863795, 1.1640634670880459] },
+      "properties": {
+        "crs": "EPSG:4326",
+        "databaseId": "5b439215d680052061ad35f5",
+        "registryId": "",
+        "target": {
+          "course": 127.8,
+          "heading": 0,
+          "rateOfTurn": 0,
+          "speed": 0.2,
+          "time": "2018-07-09T16:49:25.751067167Z"
+        },
+        "trackId": "2b92216922d495131796f340c321a6ec",
+        "type": "track:Radar"
+      },
+      "id": "2b92216922d495131796f340c321a6ec"
+    },
+    "counts": { "total": 2, "visible": 1 }
+  },
+  {
+    "status": "Current",
+    "feature": {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [104.13588666666666, 1.2954283333333334] },
+      "properties": {
+        "crs": "EPSG:4326",
+        "databaseId": "5b439216d680052061ad35f8",
+        "metadata": { "name": "MT BITUMEN PERKASA  ", "shipAndCargoType": 80 },
+        "registryId": "d06153746b84fc79fc23214128ac4594",
+        "target": {
+          "course": 266.8,
+          "heading": 1,
+          "mmsi": "525011089",
+          "navigationalStatus": 1,
+          "rateOfTurn": 720,
+          "speed": 0.6,
+          "time": "2018-07-09T16:49:26.060171041Z"
+        },
+        "trackId": "be61118ed27883f1809320ef93d6903d",
+        "type": "track:AIS"
+      },
+      "id": "d06153746b84fc79fc23214128ac4594"
+    },
+    "counts": { "total": 6, "visible": 3 }
+  },
+  {
+    "status": "Current",
+    "feature": {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [104.11953333333334, 1.2912833333333333] },
+      "properties": {
+        "crs": "EPSG:4326",
+        "databaseId": "5b439216d680052061ad35fb",
+        "metadata": { "name": "VINASHIN STAR", "shipAndCargoType": 70 },
+        "registryId": "44f0c92c1534c67ae7d0ea17707fcf1f",
+        "target": {
+          "course": 256.4,
+          "heading": 63,
+          "mmsi": "574229000",
+          "navigationalStatus": 1,
+          "rateOfTurn": 0,
+          "speed": 0.1,
+          "time": "2018-07-09T16:49:26.070208651Z"
+        },
+        "trackId": "1d5a578801ad086b03624ea04b292a58",
+        "type": "track:AIS"
+      },
+      "id": "44f0c92c1534c67ae7d0ea17707fcf1f"
+    },
+    "counts": { "total": 9, "visible": 4 }
+  },
+  {
+    "status": "Current",
+    "feature": {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [103.97005333333334, 1.260875] },
+      "properties": {
+        "crs": "EPSG:4326",
+        "databaseId": "5b439216d680052061ad35fc",
+        "metadata": { "name": "YONG MA             ", "shipAndCargoType": 70 },
+        "registryId": "a0de1d331d1f6a41686ba6fddc11fd11",
+        "target": {
+          "course": 267.9,
+          "heading": 270,
+          "mmsi": "441489000",
+          "navigationalStatus": 0,
+          "rateOfTurn": 0,
+          "speed": 4.9,
+          "time": "2018-07-09T16:49:26.109878628Z"
+        },
+        "trackId": "a30275339f276db704d0b10204c3ef72",
+        "type": "track:AIS"
+      },
+      "id": "a0de1d331d1f6a41686ba6fddc11fd11"
+    },
+    "counts": { "total": 10, "visible": 5 }
+  },
+  {
+    "status": "Current",
+    "feature": {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [104.04241666666667, 1.24367] },
+      "properties": {
+        "crs": "EPSG:4326",
+        "databaseId": "5b439216d680052061ad35fd",
+        "metadata": { "name": "TH SONATA           ", "shipAndCargoType": 80 },
+        "registryId": "a1af31f5fc0fcaa76c05c64caad0bb27",
+        "target": {
+          "course": 82.7,
+          "heading": 81,
+          "mmsi": "370922000",
+          "navigationalStatus": 0,
+          "rateOfTurn": 0,
+          "speed": 13.6,
+          "time": "2018-07-09T16:49:26.172939162Z"
+        },
+        "trackId": "b5d79140e74fa64285be94d3c6e9420b",
+        "type": "track:AIS"
+      },
+      "id": "a1af31f5fc0fcaa76c05c64caad0bb27"
+    },
+    "counts": { "total": 11, "visible": 6 }
+  },
+  {
+    "status": "Current",
+    "feature": {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [104.04241666666667, 1.24367] },
+      "properties": {
+        "crs": "EPSG:4326",
+        "databaseId": "5b439216d680052061ad35fd",
+        "metadata": { "name": "TH SONATA           ", "shipAndCargoType": 80 },
+        "registryId": "a1af31f5fc0fcaa76c05c64caad0bb27",
+        "target": {
+          "course": 82.7,
+          "heading": 81,
+          "mmsi": "370922000",
+          "navigationalStatus": 0,
+          "rateOfTurn": 0,
+          "speed": 13.6,
+          "time": "2018-07-09T16:49:26.172939162Z"
+        },
+        "trackId": "b5d79140e74fa64285be94d3c6e9420b",
+        "type": "track:AIS"
+      },
+      "id": "a1af31f5fc0fcaa76c05c64caad0bb27"
+    },
+    "counts": { "total": 11, "visible": 6 }
+  },
+  {
+    "status": "Current",
+    "feature": {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [103.82151985224147, 1.2110244320263415] },
+      "properties": {
+        "crs": "EPSG:4326",
+        "databaseId": "5b439216d680052061ad35fe",
+        "registryId": "",
+        "target": {
+          "course": 279,
+          "heading": 0,
+          "rateOfTurn": 0,
+          "speed": 11,
+          "time": "2018-07-09T16:49:26.204166786Z"
+        },
+        "trackId": "50191b3f7ef30b08ac6c677d0db28f7c",
+        "type": "track:Radar"
+      },
+      "id": "50191b3f7ef30b08ac6c677d0db28f7c"
+    },
+    "counts": { "total": 13, "visible": 7 }
+  },
+  {
+    "status": "Timeout",
+    "feature": {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [103.864395, 1.268875] },
+      "properties": {
+        "crs": "EPSG:4326",
+        "databaseId": "5b4392a8d680052061ad47b7",
+        "metadata": { "name": "" },
+        "registryId": "b2318c00a56bc7d08496f4aae29e52b2",
+        "target": {
+          "course": 84.6,
+          "heading": 0,
+          "mmsi": "563011770",
+          "rateOfTurn": 0,
+          "speed": 0,
+          "time": "2018-07-09T16:51:52.04986387Z"
+        },
+        "trackId": "3b206e05e2edc19bab71f0de65a3164f",
+        "type": "track:AIS"
+      },
+      "id": "b2318c00a56bc7d08496f4aae29e52b2"
+    },
+    "counts": { "total": 822, "visible": 423 }
+  },
+  {
+    "status": "LeftGeoRange",
+    "feature": {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [104.16116833333334, 1.3014933333333334] },
+      "properties": {
+        "crs": "EPSG:4326",
+        "databaseId": "5b43966dd680052061adbc2c",
+        "metadata": { "name": "GOLDEN PREMIUM      ", "shipAndCargoType": 70 },
+        "registryId": "ce8e9c4f3560dabbdc290ae4765f8658",
+        "target": {
+          "course": 306.2,
+          "heading": 0,
+          "mmsi": "325159000",
+          "navigationalStatus": 0,
+          "rateOfTurn": 0,
+          "speed": 0.1,
+          "time": "2018-07-09T17:07:57.199479015Z"
+        },
+        "trackId": "8cb63dfe55b449b9f827f4f95a75bf70",
+        "type": "track:AIS"
+      },
+      "id": "ce8e9c4f3560dabbdc290ae4765f8658"
+    },
+    "counts": { "total": 825, "visible": 80 }
+  },
+  {
+    "viewId": "unnamed3",
+    "extent": {
+      "minLon": 103.10367333926104,
+      "minLat": 1.019242872000234,
+      "maxLon": 103.46499295269058,
+      "maxLat": 1.368003040668782
+    }
+  },
+  {
+    "status": "History",
+    "feature": {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [103.85564166666667, 1.2571583333333334] },
+      "properties": {
+        "crs": "EPSG:4326",
+        "databaseId": "5b4370fdd680052061a98081",
+        "metadata": { "name": "GALLANT", "shipAndCargoType": 156 },
+        "registryId": "f1b00fa64c8da236512b52fe61f8c6af",
+        "target": {
+          "course": 65.8,
+          "heading": 0,
+          "mmsi": "563546000",
+          "navigationalStatus": 0,
+          "rateOfTurn": 0,
+          "speed": 7.5,
+          "time": "2018-07-09T14:28:13.838070429Z"
+        },
+        "trackId": "098fb0bf58c76593dde4892922e0c318",
+        "type": "track:AIS"
+      },
+      "id": "sec:1531146493:ctr:29:site:1:eid:54000"
+    },
+    "counts": null
+  },
+  {
+    "status": "Current",
+    "feature": {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-77.0311050415039, 38.491790771484375] },
+      "properties": {
+        "crs": "EPSG:4326",
+        "databaseId": "5b514d6ff4ff0055092826a0",
+        "registryId": "b89501115a94eba3f30fa08e613cb6c8",
+        "target": { "heading": 64, "speed": 0, "time": "2018-07-20T02:47:00Z" },
+        "trackId": "533235baa7cac8fb225615eedd82dca3",
+        "type": "track:OmnicomVMS"
+      },
+      "id": "b89501115a94eba3f30fa08e613cb6c8"
+    },
+    "counts": { "total": 2, "visible": 2 }
+  },
+  {
+    "status": "Current",
+    "feature": {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-70.80000305, -53.15000153] },
+      "properties": {
+        "databaseId": "5ae0c9c5f4ff0073b0c3284d",
+        "name": "Punta Arenas (Cobrem Par)",
+        "siteId": 3,
+        "status": "Ok",
+        "type": "site"
+      },
+      "id": "5ae0c9c5f4ff0073b0c3284d"
+    },
+    "counts": { "total": 2, "visible": 1 }
+  }
+]

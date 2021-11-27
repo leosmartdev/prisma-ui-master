@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DrawMode default export matches snapshot 1`] = `
+<div
+  style={
+    Object {
+      "height": 500,
+      "position": "relative",
+      "width": 800,
+    }
+  }
+>
+  <div
+    className="prisma-map-div"
+    id="draw"
+    style={
+      Object {
+        "height": 500,
+        "width": 800,
+      }
+    }
+  />
+  <div
+    id="map-controls-overlay"
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "overflow": "hidden",
+        "pointerEvents": "none",
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  />
+</div>
+`;
+
+exports[`DrawMode.MapDrawMode matches snapshot 1`] = `null`;

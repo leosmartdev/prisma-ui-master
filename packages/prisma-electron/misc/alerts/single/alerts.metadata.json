@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":1,"key":{"_id":1},"name":"_id_","ns":"trident.alerts"},{"v":1,"key":{"ctime":1},"name":"ctime","ns":"trident.alerts","background":true},{"v":1,"key":{"track_id":1},"name":"track_id","ns":"trident.alerts","background":true}]}

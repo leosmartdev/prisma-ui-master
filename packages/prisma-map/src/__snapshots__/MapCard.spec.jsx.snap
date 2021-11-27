@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MapCard> snapshots 1`] = `
+<div
+  className="MuiPaper-root-12 MuiPaper-elevation8-22 MuiPaper-rounded-13 MuiCard-root-11 MapCard-root-1 MapCard-top-right-4"
+/>
+`;

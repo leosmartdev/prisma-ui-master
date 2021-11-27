@@ -1,0 +1,18 @@
+#!/bin/bash
+
+BASEDIR=$(dirname "$0")
+LOCALES="$BASEDIR"/../locales
+
+. "$BASEDIR"/locales
+conv="$BASEDIR"/../node_modules/i18next-conv/bin/index.js
+
+for locale in $locales; do
+    $conv \
+        --skipUntranslated \
+        -l $locale \
+        -s "$LOCALES"/${locale}.po \
+        -t "$LOCALES"/${locale}.json
+done
+
+
+

@@ -1,0 +1,92 @@
+#!/bin/bash
+
+cd $(dirname $0)/..
+
+function field {
+    echo $(grep \"$1\" build/app/main/brand.json | cut -f 4 -d\")
+}
+
+# which os are we targeting? No OS sent in means build  all
+case $1 in
+    "mac"|"macos"|"darwin"|"macOS")
+        OS="MAC"
+        ;;
+    "windows"|"win")
+        OS="WIN"
+        ;;
+    "linux")
+        OS="LINUX"
+        ;;
+    *)
+        OS="ALL"
+        ;;
+esac
+
+echo "Building Package [OS=$OS]"
+
+NAME=$(field name)
+SLUG=$(field slug)
+VERSION=$(field version)
+COPYRIGHT=$(field copyright)
+COMMIT="git$(field commit)"
+COMPANY=$(field company)
+TIMESTAMP=$(field timestamp)
+
+echo "Cleaning app directory for packaging."
+( cd build/app)
+rm -rf build/app/*.js
+find build/app/src -name "*.js" -not -name "bundle.js" -delete
+
+# Doing a yarn install here since in the make-build the environment is production, which
+# means devDependencies aren't installed and for some reason, the packager is looking
+# for some devDeps. It might be the packager pruning though, so devDeps might still not be
+# getting into the final package.
+cd build/app && yarn install --silent --non-interactive && cd -;
+# cd build/app/node_modules/openlayers; yarn install --production; cd -;
+
+MARK="$VERSION-$TIMESTAMP-$COMMIT"
+
+rm -rf /tmp/electron-packager
+if [ -d /tmp/electron-packager ] ; then
+    sudo rm -rf /tmp/electron-packager
+fi
+
+
+if [ "$OS" == "ALL" ] || [ "$OS" == "LINUX" ] ; then
+    mkdir -p dist/package/linux;
+    node_modules/.bin/electron-packager build/app "$NAME" --out dist/package/linux --overwrite \
+        --asar \
+        --platform linux --arch x64 \
+        --icon build/app/src/lib/brand/app_icon.png \
+        --app-copyright "$COPYRIGHT" \
+        --app-version "$VERSION" \
+        --build-version "$COMMIT";
+    cd dist/package/linux; tar zcf "$SLUG-linux-x64-$MARK.tar.gz" "$SLUG-linux-x64"; cd - ;
+fi
+
+if [ "$OS" == "ALL" ] || [ "$OS" == "MAC" ] ; then
+    # http://www.macgazine.net/2015/01/how-to-convert-icons-file-png-to-icns.html
+    mkdir -p dist/package/macOS;
+    node_modules/.bin/electron-packager build/app "$NAME" --out dist/package/macOS --overwrite \
+        --asar \
+        --platform darwin --arch x64 \
+        --icon brands/generic/app_icon.icns \
+        --app-copyright "$COPYRIGHT" \
+        --app-version "$VERSION" \
+        --build-version "$COMMIT";
+    cd dist/package/macOS; tar zcf "$NAME-macOS-x64-$MARK.tar.gz" "$NAME-darwin-x64"; cd - ;
+fi
+
+if [ "$OS" == "ALL" ] || [ "$OS" == "WIN" ] ; then
+    mkdir -p dist/package/windows;
+    node_modules/.bin/electron-packager build/app "$SLUG" --out dist/package/windows --overwrite \
+        --asar \
+        --platform win32 --arch x64 \
+        --icon brands/generic/app_icon.ico \
+        --app-copyright "$COPYRIGHT" \
+        --app-version "$VERSION" \
+        --name "$NAME" \
+        --win32metadata.CompanyName "Orolia" \
+        --win32metadata.ProductName "$NAME";
+    cd dist/package/windows; zip -r "$SLUG-win32-x64-$MARK.zip" "$SLUG-win32-x64"; cd -;
+fi

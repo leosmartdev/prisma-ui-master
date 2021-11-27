@@ -1,0 +1,1819 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Convergence 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-11-19 12:15+0000\n"
+"PO-Revision-Date: 2016-06-24 14:58-0500\n"
+"Last-Translator: \n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: make/../src/about/AboutButton.js:28
+#, fuzzy
+msgid "About"
+msgstr "Djibouti"
+
+#: make/../src/about/AboutPage.js:37
+msgid "Version"
+msgstr ""
+
+#: make/../src/about/AboutPage.js:41
+msgid "Close"
+msgstr ""
+
+#: make/../src/ais/ais_formatter.js:33 make/../src/bundle.js:13118
+msgid "<< unknown >>"
+msgstr "<< Inconnu >>"
+
+#: make/../src/ais/ais_formatter.js:64 make/../src/bundle.js:13146
+#: make/../src/lib/formatter.js:92
+msgid "left"
+msgstr ""
+
+#: make/../src/ais/ais_formatter.js:66 make/../src/bundle.js:13148
+#: make/../src/lib/formatter.js:94
+msgid "right"
+msgstr ""
+
+#. L10n: Abbreviation for minutes
+#: make/../src/ais/ais_formatter.js:68 make/../src/bundle.js:13150
+#: make/../src/lib/formatter.js:96 make/../src/radar/radar_formatter.js:82
+msgid "min"
+msgstr ""
+
+#: make/../src/ais/ais_formatter.js:94 make/../src/bundle.js:13176
+msgid "Underway"
+msgstr "Faisant route"
+
+#: make/../src/ais/ais_formatter.js:96 make/../src/bundle.js:13178
+msgid "Anchored"
+msgstr "Mouillage"
+
+#: make/../src/ais/ais_formatter.js:98 make/../src/bundle.js:13180
+msgid "Not under command"
+msgstr "Pas sous commandement"
+
+#: make/../src/ais/ais_formatter.js:100 make/../src/bundle.js:13182
+msgid "Restricted maneuverability"
+msgstr "Maniabilité restreinte"
+
+#: make/../src/ais/ais_formatter.js:102 make/../src/bundle.js:13184
+msgid "Constrained by draft"
+msgstr "Contraint par tirant d'eau"
+
+#: make/../src/ais/ais_formatter.js:104 make/../src/bundle.js:13186
+msgid "Moored"
+msgstr "Amarré"
+
+#: make/../src/ais/ais_formatter.js:106 make/../src/bundle.js:13188
+msgid "Aground"
+msgstr "Échoué"
+
+#: make/../src/ais/ais_formatter.js:108 make/../src/ais/ais_formatter.js:206
+#: make/../src/bundle.js:13190 make/../src/bundle.js:13284
+msgid "Fishing"
+msgstr "En pêche"
+
+#: make/../src/ais/ais_formatter.js:110 make/../src/ais/ais_formatter.js:218
+#: make/../src/bundle.js:13192 make/../src/bundle.js:13296
+msgid "Sailing"
+msgstr "Sous voile"
+
+#: make/../src/ais/ais_formatter.js:112 make/../src/bundle.js:13194
+msgid "Unknown"
+msgstr "Inconnu"
+
+#: make/../src/ais/ais_formatter.js:114 make/../src/ais/ais_formatter.js:222
+#: make/../src/ais/ais_formatter.js:426 make/../src/bundle.js:13196
+#: make/../src/bundle.js:13300 make/../src/bundle.js:13499
+msgid "Code {{code}}"
+msgstr ""
+
+#: make/../src/ais/ais_formatter.js:121 make/../src/bundle.js:13203
+msgid "High"
+msgstr "Haute"
+
+#: make/../src/ais/ais_formatter.js:123 make/../src/bundle.js:13205
+msgid "Low"
+msgstr "Faible"
+
+#: make/../src/ais/ais_formatter.js:132 make/../src/bundle.js:13214
+msgid "Yes"
+msgstr "Oui"
+
+#: make/../src/ais/ais_formatter.js:134 make/../src/ais/ais_formatter.js:143
+#: make/../src/bundle.js:13216 make/../src/bundle.js:13225
+msgid "No"
+msgstr "Non"
+
+#. L10n: Special Maneuver
+#: make/../src/ais/ais_formatter.js:146 make/../src/bundle.js:13228
+msgid "Engaged"
+msgstr ""
+
+#: make/../src/ais/ais_formatter.js:172 make/../src/bundle.js:13250
+msgid "Pilot"
+msgstr "Pilote"
+
+#: make/../src/ais/ais_formatter.js:174 make/../src/bundle.js:13252
+msgid "Search and rescue"
+msgstr "Recherche et sauvetage"
+
+#: make/../src/ais/ais_formatter.js:176 make/../src/bundle.js:13254
+msgid "Tug"
+msgstr "Remorqueur"
+
+#: make/../src/ais/ais_formatter.js:178 make/../src/bundle.js:13256
+msgid "Port tender"
+msgstr "Transbordement"
+
+#: make/../src/ais/ais_formatter.js:180 make/../src/bundle.js:13258
+msgid "Anti-pollution"
+msgstr "Anti-pollution"
+
+#: make/../src/ais/ais_formatter.js:182 make/../src/bundle.js:13260
+msgid "Law enforcement"
+msgstr "Gendarmerie"
+
+#: make/../src/ais/ais_formatter.js:184 make/../src/bundle.js:13262
+msgid "Medical transport"
+msgstr "Transport médical"
+
+#: make/../src/ais/ais_formatter.js:186 make/../src/bundle.js:13264
+msgid "Resolution 18"
+msgstr "Résolution 18"
+
+#: make/../src/ais/ais_formatter.js:191 make/../src/bundle.js:13269
+#, fuzzy
+msgid "Wing-in-ground"
+msgstr "Navion"
+
+#: make/../src/ais/ais_formatter.js:193 make/../src/bundle.js:13271
+#, fuzzy
+msgid "High-speed craft"
+msgstr "NGV"
+
+#: make/../src/ais/ais_formatter.js:195 make/../src/bundle.js:13273
+msgid "Passenger ship"
+msgstr "Navire de passagers"
+
+#: make/../src/ais/ais_formatter.js:197 make/../src/bundle.js:13275
+#, fuzzy
+msgid "Cargo ship"
+msgstr "Cargo"
+
+#: make/../src/ais/ais_formatter.js:199 make/../src/bundle.js:13277
+msgid "Tanker"
+msgstr "Tanker"
+
+#: make/../src/ais/ais_formatter.js:201 make/../src/bundle.js:13279
+msgid "Other"
+msgstr "Autre"
+
+#: make/../src/ais/ais_formatter.js:208 make/../src/bundle.js:13286
+msgid "Towing"
+msgstr "Remorquage"
+
+#: make/../src/ais/ais_formatter.js:210 make/../src/bundle.js:13288
+msgid "Towing (large)"
+msgstr "Remorquage (Gros tonnage)"
+
+#: make/../src/ais/ais_formatter.js:212 make/../src/bundle.js:13290
+msgid "Dredging or underwater"
+msgstr "Dragage/Opérations sous-marines"
+
+#: make/../src/ais/ais_formatter.js:214 make/../src/bundle.js:13292
+msgid "Diving"
+msgstr "Opérations de plongée"
+
+#: make/../src/ais/ais_formatter.js:216 make/../src/bundle.js:13294
+msgid "Military"
+msgstr "Opérations militaires"
+
+#: make/../src/ais/ais_formatter.js:220 make/../src/bundle.js:13298
+msgid "Pleasure craft"
+msgstr "Bateau de plaisance"
+
+#: make/../src/ais/ais_formatter.js:320 make/../src/ais/ais_formatter.js:435
+#: make/../src/bundle.js:13394 make/../src/bundle.js:13508
+msgid "Not available"
+msgstr "Non disponible"
+
+#: make/../src/ais/ais_formatter.js:400 make/../src/bundle.js:13473
+msgid "Undefined"
+msgstr "Indéfini"
+
+#. L10n: Abbreviation: Global Positioning System
+#: make/../src/ais/ais_formatter.js:403 make/../src/bundle.js:13476
+msgid "GPS"
+msgstr "GPS"
+
+#. L10n: Abbreviation: Globalnaya Navigazionnaya Sputnikovaya Sistema
+#: make/../src/ais/ais_formatter.js:406 make/../src/bundle.js:13479
+msgid "GLONASS"
+msgstr "GLONASS"
+
+#: make/../src/ais/ais_formatter.js:408 make/../src/bundle.js:13481
+msgid "GPS/GLONASS"
+msgstr "GPS & GLONASS"
+
+#. L10n: Loran-C was a hyperbolic radio navigation system which allowed a receiver to determine its position by listening to low frequency radio signals transmitted by fixed land-based radio beacons.
+#: make/../src/ais/ais_formatter.js:411 make/../src/bundle.js:13484
+msgid "Loran-C"
+msgstr "Loran-C"
+
+#. L10n: Chayka is a Russian terrestrial radio navigation system, similar to LORAN-C.
+#: make/../src/ais/ais_formatter.js:414 make/../src/bundle.js:13487
+msgid "Chayka"
+msgstr "Chayka"
+
+#: make/../src/ais/ais_formatter.js:416 make/../src/bundle.js:13489
+msgid "Integrated navigation system"
+msgstr "Système de navigation intégré"
+
+#: make/../src/ais/ais_formatter.js:418 make/../src/bundle.js:13491
+msgid "Surveyed"
+msgstr "Interrogés"
+
+#. L10n: Galileo is the global navigation satellite system (GNSS) that is currently being created by the European Union (EU)
+#: make/../src/ais/ais_formatter.js:421 make/../src/bundle.js:13494
+msgid "Galileo"
+msgstr "Galileo"
+
+#. L10n: GNSS = global navigation satellite system
+#: make/../src/ais/ais_formatter.js:424 make/../src/bundle.js:13497
+msgid "Internal GNSS"
+msgstr ""
+
+#: make/../src/ais/ais_formatter.js:433 make/../src/bundle.js:13506
+msgid "Available"
+msgstr ""
+
+#: make/../src/ais/ais_formatter.js:452 make/../src/bundle.js:13525
+msgid "Category X"
+msgstr "Catégorie X"
+
+#: make/../src/ais/ais_formatter.js:454 make/../src/bundle.js:13527
+msgid "Category Y"
+msgstr "Catégorie Y"
+
+#: make/../src/ais/ais_formatter.js:456 make/../src/bundle.js:13529
+msgid "Category Z"
+msgstr "Catégorie Z"
+
+#: make/../src/ais/ais_formatter.js:458 make/../src/bundle.js:13531
+#, fuzzy
+msgid "Category OS"
+msgstr "Catégorie OS"
+
+#: make/../src/ais/AISAlertMatch.js:31
+#, fuzzy
+msgid "MMSI:"
+msgstr "MMSI"
+
+#. L10n: Abbreviation: Maritime Mobile Service Identity
+#: make/../src/ais/AISInfoPanel.js:58
+msgid "MMSI"
+msgstr "MMSI"
+
+#: make/../src/ais/AISInfoPanel.js:62
+msgid "Vessel Type"
+msgstr ""
+
+#: make/../src/ais/AISInfoPanel.js:66
+msgid "Destination"
+msgstr "Destination"
+
+#. L10n: Abbreviation: Estimated Time until Arrival
+#: make/../src/ais/AISInfoPanel.js:71
+msgid "ETA"
+msgstr "ETA"
+
+#: make/../src/ais/AISInfoPanel.js:79
+msgid "Rate of Turn"
+msgstr "Vitesse de rotation"
+
+#: make/../src/ais/AISInfoPanel.js:83
+msgid "Navigational Status"
+msgstr "Statut navigation"
+
+#: make/../src/ais/AISInfoPanel.js:87
+msgid "Special Maneuver"
+msgstr ""
+
+#: make/../src/ais/AISTooltipPanel.js:38
+#: make/../src/radar/RadarTooltipPanel.js:29
+msgid "Course"
+msgstr "Route"
+
+#: make/../src/ais/AISTooltipPanel.js:41 make/../src/info/InfoPosition.js:36
+#: make/../src/radar/RadarTooltipPanel.js:32
+msgid "Speed"
+msgstr "Vitesse"
+
+#: make/../src/ais/AISTooltipPanel.js:45
+#: make/../src/radar/RadarTooltipPanel.js:36
+msgid "Heading"
+msgstr "Cap"
+
+#. L10n: Short for 'Rate of Turn'
+#: make/../src/ais/AISTooltipPanel.js:49
+msgid "Turn"
+msgstr ""
+
+#: make/../src/alerts/AlertButton.js:28
+#: make/../src/alerts/ListAlertsPanel.js:187
+msgid "Alerts"
+msgstr ""
+
+#: make/../src/alerts/ListAlertsPanel.js:190
+msgid "Acknowledge All"
+msgstr ""
+
+#: make/../src/bundle.js:4144 make/../src/history/HistoryButton.jsx:11
+#: make/../src/zones/EditZonePanel.js:403
+msgid "None"
+msgstr ""
+
+#: make/../src/bundle.js:4144 make/../src/history/HistoryButton.jsx:12
+#: make/../src/history/HistoryButton.jsx:13
+#: make/../src/history/HistoryButton.jsx:14
+msgid "{{count}} hour"
+msgstr ""
+
+#: make/../src/bundle.js:4144 make/../src/history/HistoryButton.jsx:15
+#: make/../src/history/HistoryButton.jsx:16
+#: make/../src/history/HistoryButton.jsx:17
+msgid "{{count}} day"
+msgstr ""
+
+#: make/../src/bundle.js:4186 make/../src/history/HistoryButton.jsx:54
+msgid "History ({{label}})"
+msgstr ""
+
+#. L10n: Compass rose direction, North
+#: make/../src/bundle.js:5450 make/../src/lib/geo/formatter.js:8
+msgid "N"
+msgstr "N"
+
+#. L10n: Compass rose direction, South
+#: make/../src/bundle.js:5452 make/../src/lib/geo/formatter.js:10
+msgid "S"
+msgstr "S"
+
+#. L10n: Compass rose direction, East
+#: make/../src/bundle.js:5457 make/../src/lib/geo/formatter.js:15
+msgid "E"
+msgstr "E"
+
+#. L10n: Compass rose direction, West
+#: make/../src/bundle.js:5459 make/../src/lib/geo/formatter.js:17
+msgid "W"
+msgstr "O"
+
+#. L10n: Unit of measure
+#: make/../src/bundle.js:7307 make/../src/bundle.js:7313
+#: make/../src/lib/units/units.js:20 make/../src/lib/units/units.js:22
+msgid "foot"
+msgid_plural "feet"
+msgstr[0] "pied"
+msgstr[1] "pieds"
+
+#: make/../src/bundle.js:7310 make/../src/lib/units/units.js:21
+msgid "Foot"
+msgstr ""
+
+#. L10n: Symbol for unit of measure: foot
+#: make/../src/bundle.js:7317 make/../src/lib/units/units.js:24
+msgid "ft"
+msgstr "ft"
+
+#: make/../src/bundle.js:7333 make/../src/bundle.js:7339
+#: make/../src/lib/units/units.js:35 make/../src/lib/units/units.js:37
+msgid "kilometer"
+msgid_plural "kilometers"
+msgstr[0] "kilomètre"
+msgstr[1] "kilomètres"
+
+#: make/../src/bundle.js:7336 make/../src/lib/units/units.js:36
+#, fuzzy
+msgid "Kilometer"
+msgstr "kilomètre"
+
+#. L10n: Symbol for unit of measure: kilometer
+#: make/../src/bundle.js:7343 make/../src/lib/units/units.js:39
+msgid "km"
+msgstr "km"
+
+#. L10n: Unit of measure
+#: make/../src/bundle.js:7360 make/../src/bundle.js:7366
+#: make/../src/lib/units/units.js:51 make/../src/lib/units/units.js:53
+msgid "meter"
+msgid_plural "meters"
+msgstr[0] "mètre"
+msgstr[1] "mètres"
+
+#: make/../src/bundle.js:7363 make/../src/lib/units/units.js:52
+#, fuzzy
+msgid "Meter"
+msgstr "mètre"
+
+#. L10n: Symbol for unit of measure: meter
+#: make/../src/bundle.js:7370 make/../src/lib/units/units.js:55
+msgid "m"
+msgstr "m"
+
+#: make/../src/bundle.js:7386 make/../src/bundle.js:7392
+#: make/../src/lib/units/units.js:66 make/../src/lib/units/units.js:68
+#, fuzzy
+msgid "mile"
+msgid_plural "miles"
+msgstr[0] "mile impérial"
+msgstr[1] "mile impérial"
+
+#: make/../src/bundle.js:7389 make/../src/lib/units/units.js:67
+msgid "Mile"
+msgstr ""
+
+#. L10n: Symbol for unit of measure: mile
+#: make/../src/bundle.js:7396 make/../src/lib/units/units.js:70
+msgid "mi"
+msgstr "mi"
+
+#: make/../src/bundle.js:7412 make/../src/bundle.js:7418
+#: make/../src/lib/units/units.js:81 make/../src/lib/units/units.js:83
+#, fuzzy
+msgid "nautical mile"
+msgid_plural "nautical miles"
+msgstr[0] "mile nautiques"
+msgstr[1] "miles nautiques"
+
+#: make/../src/bundle.js:7415 make/../src/lib/units/units.js:82
+#, fuzzy
+msgid "Nautical Mile"
+msgstr "mile nautiques"
+
+#. L10n: Symbol for unit of measure, nautical mile
+#: make/../src/bundle.js:7422 make/../src/lib/units/units.js:85
+msgid "NM"
+msgstr "NM"
+
+#: make/../src/bundle.js:7438 make/../src/bundle.js:7441
+#: make/../src/lib/units/units.js:97 make/../src/lib/units/units.js:98
+msgid "kilometer per hour"
+msgid_plural "kilometers per hour"
+msgstr[0] "kilomètre par heure"
+msgstr[1] "kilomètres par heure"
+
+#. L10n: Symbol for unit of measure: kilometers per hour
+#: make/../src/bundle.js:7445 make/../src/lib/units/units.js:100
+msgid "km/h"
+msgstr "km/h"
+
+#. L10n: Unit of measure
+#: make/../src/bundle.js:7458 make/../src/bundle.js:7461
+#: make/../src/lib/units/units.js:110 make/../src/lib/units/units.js:111
+msgid "knot"
+msgid_plural "knots"
+msgstr[0] "nœud"
+msgstr[1] "nœuds"
+
+#. L10n: Symbol for unit of measure: knot
+#: make/../src/bundle.js:7465 make/../src/lib/units/units.js:113
+msgid "kn"
+msgstr "kn"
+
+#: make/../src/bundle.js:7477 make/../src/bundle.js:7480
+#: make/../src/lib/units/units.js:122 make/../src/lib/units/units.js:123
+msgid "mile per hour"
+msgid_plural "miles per hour"
+msgstr[0] "mile par heure"
+msgstr[1] "miles par heure"
+
+#. L10n: Symbol for unit of measure: miles per hour
+#: make/../src/bundle.js:7484 make/../src/lib/units/units.js:125
+msgid "mph"
+msgstr "mph"
+
+#: make/../src/bundle.js:7544 make/../src/lib/units/units.js:180
+msgid "Nautical / Metric"
+msgstr ""
+
+#: make/../src/bundle.js:7552 make/../src/lib/units/units.js:186
+msgid "Nautical / Imperial"
+msgstr ""
+
+#: make/../src/bundle.js:7560 make/../src/lib/units/units.js:192
+msgid "Metric"
+msgstr ""
+
+#: make/../src/bundle.js:7568 make/../src/lib/units/units.js:198
+msgid "Imperial"
+msgstr ""
+
+#: make/../src/bundle.js:13696 make/../src/lib/country/iso2.js:6
+msgid "Andorra"
+msgstr "Andorre"
+
+#: make/../src/bundle.js:13697 make/../src/lib/country/iso2.js:7
+msgid "United Arab Emirates"
+msgstr "Émirats Arabes Unis"
+
+#: make/../src/bundle.js:13698 make/../src/lib/country/iso2.js:8
+msgid "Afghanistan"
+msgstr "Afghanistan"
+
+#: make/../src/bundle.js:13699 make/../src/lib/country/iso2.js:9
+msgid "Antigua and Barbuda"
+msgstr "Antigua-et-Barbuda"
+
+#: make/../src/bundle.js:13700 make/../src/lib/country/iso2.js:10
+msgid "Anguilla"
+msgstr "Anguilla"
+
+#: make/../src/bundle.js:13701 make/../src/lib/country/iso2.js:11
+msgid "Albania"
+msgstr "Albanie"
+
+#: make/../src/bundle.js:13702 make/../src/lib/country/iso2.js:12
+msgid "Angola"
+msgstr "Angola"
+
+#: make/../src/bundle.js:13703 make/../src/lib/country/iso2.js:13
+msgid "Kerguelen Islands"
+msgstr "Archipel des Kerguelen (TAAF)"
+
+#: make/../src/bundle.js:13704 make/../src/lib/country/iso2.js:14
+msgid "Argentina"
+msgstr "Argentine"
+
+#: make/../src/bundle.js:13705 make/../src/lib/country/iso2.js:15
+msgid "American Samoa"
+msgstr "Samoa Américaines"
+
+#: make/../src/bundle.js:13706 make/../src/lib/country/iso2.js:16
+msgid "Austria"
+msgstr "Autriche"
+
+#: make/../src/bundle.js:13707 make/../src/lib/country/iso2.js:17
+msgid "Australia"
+msgstr "Australie"
+
+#: make/../src/bundle.js:13708 make/../src/lib/country/iso2.js:18
+msgid "Aruba"
+msgstr "Aruba"
+
+#: make/../src/bundle.js:13709 make/../src/lib/country/iso2.js:19
+msgid "Azerbaijani Republic"
+msgstr "Azerbaïdjan"
+
+#: make/../src/bundle.js:13710 make/../src/lib/country/iso2.js:20
+msgid "Bosnia and Herzegovina"
+msgstr "Bosnie-Herzégovine"
+
+#: make/../src/bundle.js:13711 make/../src/lib/country/iso2.js:21
+msgid "Barbados"
+msgstr "Barbade"
+
+#: make/../src/bundle.js:13712 make/../src/lib/country/iso2.js:22
+msgid "Bangladesh"
+msgstr "Bangladesh"
+
+#: make/../src/bundle.js:13713 make/../src/lib/country/iso2.js:23
+msgid "Belgium"
+msgstr "Belgique"
+
+#: make/../src/bundle.js:13714 make/../src/lib/country/iso2.js:24
+msgid "Burkina Faso"
+msgstr "Burkina Faso"
+
+#: make/../src/bundle.js:13715 make/../src/lib/country/iso2.js:25
+msgid "Bulgaria"
+msgstr "Bulgarie"
+
+#: make/../src/bundle.js:13716 make/../src/lib/country/iso2.js:26
+msgid "Bahrain"
+msgstr "Bahreïn"
+
+#: make/../src/bundle.js:13717 make/../src/lib/country/iso2.js:27
+msgid "Burundi"
+msgstr "Burundi"
+
+#: make/../src/bundle.js:13718 make/../src/lib/country/iso2.js:28
+msgid "Benin"
+msgstr "Bénin"
+
+#: make/../src/bundle.js:13719 make/../src/lib/country/iso2.js:29
+msgid "Bermuda"
+msgstr "Bermudes"
+
+#: make/../src/bundle.js:13720 make/../src/lib/country/iso2.js:30
+msgid "Brunei"
+msgstr "Brunei"
+
+#: make/../src/bundle.js:13721 make/../src/lib/country/iso2.js:31
+msgid "Bolivia"
+msgstr "Bolivie"
+
+#: make/../src/bundle.js:13722 make/../src/lib/country/iso2.js:32
+msgid "Brazil"
+msgstr "Brésil"
+
+#: make/../src/bundle.js:13723 make/../src/lib/country/iso2.js:33
+msgid "Bahamas"
+msgstr "Bahamas"
+
+#: make/../src/bundle.js:13724 make/../src/lib/country/iso2.js:34
+msgid "Bhutan"
+msgstr "Bhutan"
+
+#: make/../src/bundle.js:13725 make/../src/lib/country/iso2.js:35
+msgid "Botswana"
+msgstr "Botswana"
+
+#: make/../src/bundle.js:13726 make/../src/lib/country/iso2.js:36
+msgid "Belarus"
+msgstr "Belarus"
+
+#: make/../src/bundle.js:13727 make/../src/lib/country/iso2.js:37
+msgid "Belize"
+msgstr "Belize"
+
+#: make/../src/bundle.js:13728 make/../src/lib/country/iso2.js:38
+msgid "Canada"
+msgstr "Canada"
+
+#: make/../src/bundle.js:13729 make/../src/lib/country/iso2.js:39
+msgid "Cocos (Keeling) Islands"
+msgstr "Îles Cocos"
+
+#: make/../src/bundle.js:13730 make/../src/lib/country/iso2.js:40
+msgid "Democratic Republic of the Congo"
+msgstr "République Démocratique du Congo"
+
+#: make/../src/bundle.js:13731 make/../src/lib/country/iso2.js:41
+msgid "Central African Republic"
+msgstr "République Centrafricaine"
+
+#: make/../src/bundle.js:13732 make/../src/lib/country/iso2.js:42
+msgid "Congo"
+msgstr "Congo"
+
+#: make/../src/bundle.js:13733 make/../src/lib/country/iso2.js:43
+msgid "Switzerland"
+msgstr "Suisse"
+
+#: make/../src/bundle.js:13734 make/../src/lib/country/iso2.js:44
+msgid "Cote d'Ivoire"
+msgstr "Côte d'Ivoire"
+
+#: make/../src/bundle.js:13735 make/../src/lib/country/iso2.js:45
+msgid "Cook Islands"
+msgstr "Îles Cook"
+
+#: make/../src/bundle.js:13736 make/../src/lib/country/iso2.js:46
+msgid "Chile"
+msgstr "Chili"
+
+#: make/../src/bundle.js:13737 make/../src/lib/country/iso2.js:47
+msgid "Cameroon"
+msgstr "Cameroun"
+
+#: make/../src/bundle.js:13738 make/../src/lib/country/iso2.js:48
+msgid "China"
+msgstr "Chine"
+
+#: make/../src/bundle.js:13739 make/../src/lib/country/iso2.js:49
+msgid "Colombia"
+msgstr "Colombie"
+
+#: make/../src/bundle.js:13740 make/../src/lib/country/iso2.js:50
+msgid "Costa Rica"
+msgstr "Costa Rica"
+
+#: make/../src/bundle.js:13741 make/../src/lib/country/iso2.js:51
+msgid "Cuba"
+msgstr "Cuba"
+
+#: make/../src/bundle.js:13742 make/../src/lib/country/iso2.js:52
+msgid "Cape Verde"
+msgstr "Cap Vert"
+
+#: make/../src/bundle.js:13743 make/../src/lib/country/iso2.js:53
+msgid "Netherlands Antilles"
+msgstr "Antilles Néerlandaises"
+
+#: make/../src/bundle.js:13744 make/../src/lib/country/iso2.js:54
+msgid "Christmas Island"
+msgstr "Île Christmas"
+
+#: make/../src/bundle.js:13745 make/../src/lib/country/iso2.js:55
+msgid "Northern Cyprus"
+msgstr "Chypre du Nord"
+
+#: make/../src/bundle.js:13746 make/../src/lib/country/iso2.js:56
+msgid "Czech Republic"
+msgstr "République Tchèque"
+
+#: make/../src/bundle.js:13747 make/../src/lib/country/iso2.js:57
+msgid "Germany"
+msgstr "Allemagne"
+
+#: make/../src/bundle.js:13748 make/../src/lib/country/iso2.js:58
+msgid "Djibouti"
+msgstr "Djibouti"
+
+#: make/../src/bundle.js:13749 make/../src/lib/country/iso2.js:59
+msgid "Denmark"
+msgstr "Danemark"
+
+#: make/../src/bundle.js:13750 make/../src/lib/country/iso2.js:60
+msgid "Dominica"
+msgstr "Dominique"
+
+#: make/../src/bundle.js:13751 make/../src/lib/country/iso2.js:61
+msgid "Dominican Republic"
+msgstr "République Dominicaine"
+
+#: make/../src/bundle.js:13752 make/../src/lib/country/iso2.js:62
+msgid "Algeria"
+msgstr "Algérie"
+
+#: make/../src/bundle.js:13753 make/../src/lib/country/iso2.js:63
+msgid "Ecuador"
+msgstr "Équateur"
+
+#: make/../src/bundle.js:13754 make/../src/lib/country/iso2.js:64
+msgid "Estonia"
+msgstr "Estonie"
+
+#: make/../src/bundle.js:13755 make/../src/lib/country/iso2.js:65
+msgid "Egypt"
+msgstr "Égypte"
+
+#: make/../src/bundle.js:13756 make/../src/lib/country/iso2.js:66
+msgid "Eritrea"
+msgstr "Érythrée"
+
+#: make/../src/bundle.js:13757 make/../src/lib/country/iso2.js:67
+msgid "Spain"
+msgstr "Espagne"
+
+#: make/../src/bundle.js:13758 make/../src/lib/country/iso2.js:68
+msgid "Ethiopia"
+msgstr "Éthiopie"
+
+#: make/../src/bundle.js:13759 make/../src/lib/country/iso2.js:69
+msgid "Finland"
+msgstr "Finlande"
+
+#: make/../src/bundle.js:13760 make/../src/lib/country/iso2.js:70
+msgid "Fiji"
+msgstr "Fiji"
+
+#: make/../src/bundle.js:13761 make/../src/lib/country/iso2.js:71
+msgid "Falkland Islands"
+msgstr "Îles Malouines"
+
+#: make/../src/bundle.js:13762 make/../src/lib/country/iso2.js:72
+msgid "Federated States of Micronesia"
+msgstr "États Fédérés de Micronésie"
+
+#: make/../src/bundle.js:13763 make/../src/lib/country/iso2.js:73
+msgid "Faroe Islands"
+msgstr "Îles Féroé"
+
+#: make/../src/bundle.js:13764 make/../src/bundle.js:13775
+#: make/../src/lib/country/iso2.js:74 make/../src/lib/country/iso2.js:85
+msgid "France"
+msgstr "France"
+
+#: make/../src/bundle.js:13765 make/../src/lib/country/iso2.js:75
+msgid "Gabon"
+msgstr "Gabon"
+
+#: make/../src/bundle.js:13766 make/../src/lib/country/iso2.js:76
+msgid "United Kingdom"
+msgstr "Royaume-Uni"
+
+#: make/../src/bundle.js:13767 make/../src/lib/country/iso2.js:77
+msgid "Grenada"
+msgstr "Grenade"
+
+#: make/../src/bundle.js:13768 make/../src/lib/country/iso2.js:78
+msgid "Georgia"
+msgstr "Géorgie"
+
+#: make/../src/bundle.js:13769 make/../src/lib/country/iso2.js:79
+msgid "Guiana"
+msgstr "Guyane"
+
+#: make/../src/bundle.js:13770 make/../src/lib/country/iso2.js:80
+msgid "Ghana"
+msgstr "Ghana"
+
+#: make/../src/bundle.js:13771 make/../src/lib/country/iso2.js:81
+msgid "Gibraltar"
+msgstr "Gibraltar"
+
+#: make/../src/bundle.js:13772 make/../src/lib/country/iso2.js:82
+msgid "Greenland"
+msgstr "Groenland"
+
+#: make/../src/bundle.js:13773 make/../src/lib/country/iso2.js:83
+msgid "Gambia"
+msgstr "Gambie"
+
+#: make/../src/bundle.js:13774 make/../src/lib/country/iso2.js:84
+msgid "Guinea"
+msgstr "Guinée"
+
+#: make/../src/bundle.js:13776 make/../src/lib/country/iso2.js:86
+msgid "Equatorial Guinea"
+msgstr "Guinée Équatoriale"
+
+#: make/../src/bundle.js:13777 make/../src/lib/country/iso2.js:87
+msgid "Greece"
+msgstr "Grèce"
+
+#: make/../src/bundle.js:13778 make/../src/lib/country/iso2.js:88
+msgid "Guatemala"
+msgstr "Guatémala"
+
+#: make/../src/bundle.js:13779 make/../src/lib/country/iso2.js:89
+msgid "Guinea-Bissau"
+msgstr "Guinée-Bissau"
+
+#: make/../src/bundle.js:13780 make/../src/lib/country/iso2.js:90
+msgid "Guyana"
+msgstr "Guyana"
+
+#: make/../src/bundle.js:13781 make/../src/lib/country/iso2.js:91
+msgid "Hong Kong"
+msgstr "Hong Kong"
+
+#: make/../src/bundle.js:13782 make/../src/lib/country/iso2.js:92
+msgid "Honduras"
+msgstr "Honduras"
+
+#: make/../src/bundle.js:13783 make/../src/lib/country/iso2.js:93
+msgid "Croatia"
+msgstr "Croatie"
+
+#: make/../src/bundle.js:13784 make/../src/lib/country/iso2.js:94
+msgid "Haiti"
+msgstr "Haïti"
+
+#: make/../src/bundle.js:13785 make/../src/lib/country/iso2.js:95
+msgid "Hungary"
+msgstr "Hongrie"
+
+#: make/../src/bundle.js:13786 make/../src/lib/country/iso2.js:96
+msgid "Indonesia"
+msgstr "Indonésie"
+
+#: make/../src/bundle.js:13787 make/../src/lib/country/iso2.js:97
+msgid "Ireland"
+msgstr "Irlande"
+
+#: make/../src/bundle.js:13788 make/../src/lib/country/iso2.js:98
+msgid "Israel"
+msgstr "Israël"
+
+#: make/../src/bundle.js:13789 make/../src/lib/country/iso2.js:99
+msgid "India"
+msgstr "Inde"
+
+#: make/../src/bundle.js:13790 make/../src/lib/country/iso2.js:100
+msgid "Ascension Island"
+msgstr "Île de l'Ascension"
+
+#: make/../src/bundle.js:13791 make/../src/lib/country/iso2.js:101
+msgid "Iraq"
+msgstr "Irak"
+
+#: make/../src/bundle.js:13792 make/../src/lib/country/iso2.js:102
+msgid "Iran"
+msgstr "Iran"
+
+#: make/../src/bundle.js:13793 make/../src/lib/country/iso2.js:103
+msgid "Iceland"
+msgstr "Islande"
+
+#: make/../src/bundle.js:13794 make/../src/lib/country/iso2.js:104
+msgid "Italy"
+msgstr "Italie"
+
+#: make/../src/bundle.js:13795 make/../src/lib/country/iso2.js:105
+msgid "Jamaica"
+msgstr "Jamaïque"
+
+#: make/../src/bundle.js:13796 make/../src/lib/country/iso2.js:106
+msgid "Jordan"
+msgstr "Jordanie"
+
+#: make/../src/bundle.js:13797 make/../src/lib/country/iso2.js:107
+msgid "Japan"
+msgstr "Japon"
+
+#: make/../src/bundle.js:13798 make/../src/lib/country/iso2.js:108
+msgid "Kenya"
+msgstr "Kenya"
+
+#: make/../src/bundle.js:13799 make/../src/lib/country/iso2.js:109
+msgid "Cambodia"
+msgstr "Cambodg"
+
+#: make/../src/bundle.js:13800 make/../src/lib/country/iso2.js:110
+msgid "Kiribati"
+msgstr "Kiribati"
+
+#: make/../src/bundle.js:13801 make/../src/lib/country/iso2.js:111
+msgid "Comoros"
+msgstr "Comores"
+
+#: make/../src/bundle.js:13802 make/../src/lib/country/iso2.js:112
+msgid "Saint Kitts and Nevis"
+msgstr "Saint-Christophe-et-Niévès"
+
+#: make/../src/bundle.js:13803 make/../src/lib/country/iso2.js:113
+msgid "North Korea"
+msgstr "Corée du Nord"
+
+#: make/../src/bundle.js:13804 make/../src/lib/country/iso2.js:114
+msgid "South Korea"
+msgstr "Corée du Sud"
+
+#: make/../src/bundle.js:13805 make/../src/lib/country/iso2.js:115
+msgid "Kuwait"
+msgstr "Koweït"
+
+#: make/../src/bundle.js:13806 make/../src/lib/country/iso2.js:116
+msgid "Cayman Islands"
+msgstr "Îles Caïmans"
+
+#: make/../src/bundle.js:13807 make/../src/lib/country/iso2.js:117
+msgid "Kazakhstan"
+msgstr "Kazakhstan"
+
+#: make/../src/bundle.js:13808 make/../src/lib/country/iso2.js:118
+msgid "Laos"
+msgstr "Laos"
+
+#: make/../src/bundle.js:13809 make/../src/lib/country/iso2.js:119
+msgid "Lebanon"
+msgstr "Liban"
+
+#: make/../src/bundle.js:13810 make/../src/lib/country/iso2.js:120
+msgid "Saint Lucia"
+msgstr "Sainte-Lucie"
+
+#: make/../src/bundle.js:13811 make/../src/lib/country/iso2.js:121
+msgid "Liechtenstein"
+msgstr "Liechtenstein"
+
+#: make/../src/bundle.js:13812 make/../src/lib/country/iso2.js:122
+msgid "Sri Lanka"
+msgstr "Sri Lanka"
+
+#: make/../src/bundle.js:13813 make/../src/lib/country/iso2.js:123
+msgid "Liberia"
+msgstr "Libéria"
+
+#: make/../src/bundle.js:13814 make/../src/lib/country/iso2.js:124
+msgid "Lesotho"
+msgstr "Lesotho"
+
+#: make/../src/bundle.js:13815 make/../src/lib/country/iso2.js:125
+msgid "Lithuania"
+msgstr "Lituanie"
+
+#: make/../src/bundle.js:13816 make/../src/lib/country/iso2.js:126
+msgid "Luxembourg"
+msgstr "Luxembourg"
+
+#: make/../src/bundle.js:13817 make/../src/lib/country/iso2.js:127
+msgid "Latvia"
+msgstr "Lettonie"
+
+#: make/../src/bundle.js:13818 make/../src/lib/country/iso2.js:128
+msgid "Libya"
+msgstr "Libye"
+
+#: make/../src/bundle.js:13819 make/../src/lib/country/iso2.js:129
+msgid "Morocco"
+msgstr "Maroc"
+
+#: make/../src/bundle.js:13820 make/../src/lib/country/iso2.js:130
+msgid "Monaco"
+msgstr "Monaco"
+
+#: make/../src/bundle.js:13821 make/../src/lib/country/iso2.js:131
+msgid "Moldova"
+msgstr "Moldavie"
+
+#: make/../src/bundle.js:13822 make/../src/lib/country/iso2.js:132
+msgid "Montenegro"
+msgstr "Monténégro"
+
+#: make/../src/bundle.js:13823 make/../src/lib/country/iso2.js:133
+msgid "Madagascar"
+msgstr "Madagascar"
+
+#: make/../src/bundle.js:13824 make/../src/lib/country/iso2.js:134
+msgid "Marshall Islands"
+msgstr "Îles Marshall"
+
+#: make/../src/bundle.js:13825 make/../src/lib/country/iso2.js:135
+msgid "Macedonia"
+msgstr "Macédoine"
+
+#: make/../src/bundle.js:13826 make/../src/lib/country/iso2.js:136
+msgid "Mali"
+msgstr "Mali"
+
+#: make/../src/bundle.js:13827 make/../src/lib/country/iso2.js:137
+msgid "Myanmar"
+msgstr "Myanmar"
+
+#: make/../src/bundle.js:13828 make/../src/lib/country/iso2.js:138
+msgid "Mongolia"
+msgstr "Mongolie"
+
+#: make/../src/bundle.js:13829 make/../src/lib/country/iso2.js:139
+msgid "Northern Mariana Islands"
+msgstr "Îles Mariannes du Nord"
+
+#: make/../src/bundle.js:13830 make/../src/lib/country/iso2.js:140
+msgid "Martinique"
+msgstr "Martinique"
+
+#: make/../src/bundle.js:13831 make/../src/lib/country/iso2.js:141
+msgid "Mauritania"
+msgstr "Mauritanie"
+
+#: make/../src/bundle.js:13832 make/../src/lib/country/iso2.js:142
+msgid "Montserrat"
+msgstr "Montserrat"
+
+#: make/../src/bundle.js:13833 make/../src/lib/country/iso2.js:143
+msgid "Malta"
+msgstr "Malte"
+
+#: make/../src/bundle.js:13834 make/../src/lib/country/iso2.js:144
+msgid "Mauritius"
+msgstr "Île Maurice"
+
+#: make/../src/bundle.js:13835 make/../src/lib/country/iso2.js:145
+msgid "Maldives"
+msgstr "Maldives"
+
+#: make/../src/bundle.js:13836 make/../src/lib/country/iso2.js:146
+msgid "Malawi"
+msgstr "Malawi"
+
+#: make/../src/bundle.js:13837 make/../src/lib/country/iso2.js:147
+msgid "Mexico"
+msgstr "Mexique"
+
+#: make/../src/bundle.js:13838 make/../src/lib/country/iso2.js:148
+msgid "Malaysia"
+msgstr "Malaisie"
+
+#: make/../src/bundle.js:13839 make/../src/lib/country/iso2.js:149
+msgid "Mozambique"
+msgstr "Mozambique"
+
+#: make/../src/bundle.js:13840 make/../src/lib/country/iso2.js:150
+msgid "Namibia"
+msgstr "Namibie"
+
+#: make/../src/bundle.js:13841 make/../src/lib/country/iso2.js:151
+msgid "New Caledonia"
+msgstr "Nouvelle-Calédonie"
+
+#: make/../src/bundle.js:13842 make/../src/lib/country/iso2.js:152
+msgid "Niger"
+msgstr "Niger"
+
+#: make/../src/bundle.js:13843 make/../src/lib/country/iso2.js:153
+msgid "Nigeria"
+msgstr "Nigéria"
+
+#: make/../src/bundle.js:13844 make/../src/lib/country/iso2.js:154
+msgid "Nicaragua"
+msgstr "Nicaragua"
+
+#: make/../src/bundle.js:13845 make/../src/lib/country/iso2.js:155
+msgid "Netherlands"
+msgstr "Pays-Bas"
+
+#: make/../src/bundle.js:13846 make/../src/lib/country/iso2.js:156
+msgid "Norway"
+msgstr "Norvège"
+
+#: make/../src/bundle.js:13847 make/../src/lib/country/iso2.js:157
+msgid "Nepal"
+msgstr "Népal"
+
+#: make/../src/bundle.js:13848 make/../src/lib/country/iso2.js:158
+msgid "Nauru"
+msgstr "Nauru"
+
+#: make/../src/bundle.js:13849 make/../src/lib/country/iso2.js:159
+msgid "Niue"
+msgstr "Niue"
+
+#: make/../src/bundle.js:13850 make/../src/lib/country/iso2.js:160
+msgid "New Zealand"
+msgstr "Nouvelle-Zélande"
+
+#: make/../src/bundle.js:13851 make/../src/lib/country/iso2.js:161
+msgid "Oman"
+msgstr "Oman"
+
+#: make/../src/bundle.js:13852 make/../src/lib/country/iso2.js:162
+msgid "Panama"
+msgstr "Panama"
+
+#: make/../src/bundle.js:13853 make/../src/lib/country/iso2.js:163
+msgid "Peru"
+msgstr "Pérou"
+
+#: make/../src/bundle.js:13854 make/../src/lib/country/iso2.js:164
+msgid "Papua New Guinea"
+msgstr "Papouasie-Nouvelle-Guinée"
+
+#: make/../src/bundle.js:13855 make/../src/lib/country/iso2.js:165
+msgid "Philippines"
+msgstr "Philippines"
+
+#: make/../src/bundle.js:13856 make/../src/lib/country/iso2.js:166
+msgid "Pakistan"
+msgstr "Pakistan"
+
+#: make/../src/bundle.js:13857 make/../src/lib/country/iso2.js:167
+msgid "Poland"
+msgstr "Pologne"
+
+#: make/../src/bundle.js:13858 make/../src/lib/country/iso2.js:168
+msgid "Saint Pierre and Miquelon"
+msgstr "Saint-Pierre-et-Miquelon"
+
+#: make/../src/bundle.js:13859 make/../src/lib/country/iso2.js:169
+msgid "Pitcairn Island"
+msgstr "Île Pitcairn"
+
+#: make/../src/bundle.js:13860 make/../src/lib/country/iso2.js:170
+msgid "Puerto Rico"
+msgstr "Porto Rico"
+
+#: make/../src/bundle.js:13861 make/../src/lib/country/iso2.js:171
+msgid "Palestine"
+msgstr "Palestine"
+
+#: make/../src/bundle.js:13862 make/../src/lib/country/iso2.js:172
+msgid "Portugal"
+msgstr "Portugal"
+
+#: make/../src/bundle.js:13863 make/../src/lib/country/iso2.js:173
+msgid "Palau"
+msgstr "Palau"
+
+#: make/../src/bundle.js:13864 make/../src/lib/country/iso2.js:174
+msgid "Paraguay"
+msgstr "Paraguay"
+
+#: make/../src/bundle.js:13865 make/../src/lib/country/iso2.js:175
+msgid "Qatar"
+msgstr "Qatar"
+
+#: make/../src/bundle.js:13866 make/../src/lib/country/iso2.js:176
+msgid "Reunion"
+msgstr "Réunion"
+
+#: make/../src/bundle.js:13867 make/../src/lib/country/iso2.js:177
+msgid "Romania"
+msgstr "Roumanie"
+
+#: make/../src/bundle.js:13868 make/../src/lib/country/iso2.js:178
+msgid "Serbia"
+msgstr "Serbie"
+
+#: make/../src/bundle.js:13869 make/../src/lib/country/iso2.js:179
+msgid "Russian Federation"
+msgstr "Russie"
+
+#: make/../src/bundle.js:13870 make/../src/lib/country/iso2.js:180
+msgid "Rwanda"
+msgstr "Rwanda"
+
+#: make/../src/bundle.js:13871 make/../src/lib/country/iso2.js:181
+msgid "Saudi Arabia"
+msgstr "Arabie Saoudite"
+
+#: make/../src/bundle.js:13872 make/../src/lib/country/iso2.js:182
+msgid "Solomon Islands"
+msgstr "Salomon"
+
+#: make/../src/bundle.js:13873 make/../src/lib/country/iso2.js:183
+msgid "Seychelles"
+msgstr "Seychelles"
+
+#: make/../src/bundle.js:13874 make/../src/lib/country/iso2.js:184
+msgid "Sudan"
+msgstr "Soudan"
+
+#: make/../src/bundle.js:13875 make/../src/lib/country/iso2.js:185
+msgid "Sweden"
+msgstr "Suède"
+
+#: make/../src/bundle.js:13876 make/../src/lib/country/iso2.js:186
+msgid "Singapore"
+msgstr "Singapour"
+
+#: make/../src/bundle.js:13877 make/../src/lib/country/iso2.js:187
+msgid "Saint Helena"
+msgstr "Saint Hélène"
+
+#: make/../src/bundle.js:13878 make/../src/lib/country/iso2.js:188
+msgid "Slovenia"
+msgstr "Slovénie"
+
+#: make/../src/bundle.js:13879 make/../src/lib/country/iso2.js:189
+msgid "Slovak Republic"
+msgstr "Slovaquie"
+
+#: make/../src/bundle.js:13880 make/../src/lib/country/iso2.js:190
+msgid "Sierra Leone"
+msgstr "Sierra Leone"
+
+#: make/../src/bundle.js:13881 make/../src/lib/country/iso2.js:191
+msgid "San Marino"
+msgstr "Saint-Marin"
+
+#: make/../src/bundle.js:13882 make/../src/lib/country/iso2.js:192
+msgid "Senegal"
+msgstr "Sénégal"
+
+#: make/../src/bundle.js:13883 make/../src/lib/country/iso2.js:193
+msgid "Somalia"
+msgstr "Somalie"
+
+#: make/../src/bundle.js:13884 make/../src/lib/country/iso2.js:194
+msgid "Suriname"
+msgstr "Suriname"
+
+#: make/../src/bundle.js:13885 make/../src/lib/country/iso2.js:195
+msgid "Sao Tome and Principe"
+msgstr "Sao Tome et Principe"
+
+#: make/../src/bundle.js:13886 make/../src/lib/country/iso2.js:196
+msgid "El Salvador"
+msgstr "El Salvador"
+
+#: make/../src/bundle.js:13887 make/../src/lib/country/iso2.js:197
+msgid "Syria"
+msgstr "Syrie"
+
+#: make/../src/bundle.js:13888 make/../src/lib/country/iso2.js:198
+msgid "Swaziland"
+msgstr "Swaziland"
+
+#: make/../src/bundle.js:13889 make/../src/lib/country/iso2.js:199
+msgid "Turks and Caicos Islands"
+msgstr "Îles Turques-et-Caïques"
+
+#: make/../src/bundle.js:13890 make/../src/lib/country/iso2.js:200
+msgid "Chad"
+msgstr "Tchad"
+
+#: make/../src/bundle.js:13891 make/../src/lib/country/iso2.js:201
+msgid "French Polynesia"
+msgstr "Polynésie Française"
+
+#: make/../src/bundle.js:13892 make/../src/lib/country/iso2.js:202
+msgid "Togo"
+msgstr "Togo"
+
+#: make/../src/bundle.js:13893 make/../src/lib/country/iso2.js:203
+msgid "Thailand"
+msgstr "Thaïlande"
+
+#: make/../src/bundle.js:13894 make/../src/lib/country/iso2.js:204
+msgid "Turkmenistan"
+msgstr "Turkménistan"
+
+#: make/../src/bundle.js:13895 make/../src/lib/country/iso2.js:205
+msgid "Tunisia"
+msgstr "Tunisie"
+
+#: make/../src/bundle.js:13896 make/../src/lib/country/iso2.js:206
+msgid "Tonga"
+msgstr "Tonga"
+
+#: make/../src/bundle.js:13897 make/../src/lib/country/iso2.js:207
+msgid "Turkey"
+msgstr "Turquie"
+
+#: make/../src/bundle.js:13898 make/../src/lib/country/iso2.js:208
+msgid "Trinidad and Tobago"
+msgstr "Trinidad et Tobago"
+
+#: make/../src/bundle.js:13899 make/../src/lib/country/iso2.js:209
+msgid "Tuvalu"
+msgstr "Tuvalu"
+
+#: make/../src/bundle.js:13900 make/../src/lib/country/iso2.js:210
+msgid "Taiwan"
+msgstr "Taiwan"
+
+#: make/../src/bundle.js:13901 make/../src/lib/country/iso2.js:211
+msgid "Tanzania"
+msgstr "Tanzanie"
+
+#: make/../src/bundle.js:13902 make/../src/lib/country/iso2.js:212
+msgid "Ukraine"
+msgstr "Ukraine"
+
+#: make/../src/bundle.js:13903 make/../src/lib/country/iso2.js:213
+msgid "Uganda"
+msgstr "Ouganda"
+
+#: make/../src/bundle.js:13904 make/../src/lib/country/iso2.js:214
+msgid "United States of America"
+msgstr "États-Unis d'Amérique"
+
+#: make/../src/bundle.js:13905 make/../src/lib/country/iso2.js:215
+msgid "Uruguay"
+msgstr "Uruguay"
+
+#: make/../src/bundle.js:13906 make/../src/lib/country/iso2.js:216
+msgid "Uzbekistan"
+msgstr "Ouzbékistan"
+
+#: make/../src/bundle.js:13907 make/../src/lib/country/iso2.js:217
+msgid "Vatican City State"
+msgstr "Vatican"
+
+#: make/../src/bundle.js:13908 make/../src/lib/country/iso2.js:218
+msgid "Saint Vincent and the Grenadines"
+msgstr "Saint-Vincent-et-les-Grenadines"
+
+#: make/../src/bundle.js:13909 make/../src/lib/country/iso2.js:219
+msgid "Venezuela"
+msgstr "Vénézuela"
+
+#: make/../src/bundle.js:13910 make/../src/lib/country/iso2.js:220
+msgid "British Virgin Islands"
+msgstr "Îles Vierges Britanniques"
+
+#: make/../src/bundle.js:13911 make/../src/lib/country/iso2.js:221
+msgid "United States Virgin Islands"
+msgstr "Îles Vierges Britanniques"
+
+#: make/../src/bundle.js:13912 make/../src/lib/country/iso2.js:222
+msgid "Vietnam"
+msgstr "Vietnam"
+
+#: make/../src/bundle.js:13913 make/../src/lib/country/iso2.js:223
+msgid "Vanuatu"
+msgstr "Vanuatu"
+
+#: make/../src/bundle.js:13914 make/../src/lib/country/iso2.js:224
+msgid "Wallis and Futuna Islands"
+msgstr "Îles de Wallis et Futuna"
+
+#: make/../src/bundle.js:13915 make/../src/lib/country/iso2.js:225
+msgid "Samoa"
+msgstr "Samoa"
+
+#: make/../src/bundle.js:13916 make/../src/lib/country/iso2.js:226
+msgid "Saint Paul and Amsterdam Islands"
+msgstr "Îles Saint-Paul et Nouvelle-Amsterdam (TAAF)"
+
+#: make/../src/bundle.js:13917 make/../src/lib/country/iso2.js:227
+msgid "Yemen"
+msgstr "Yémen"
+
+#: make/../src/bundle.js:13918 make/../src/lib/country/iso2.js:228
+msgid "South Africa"
+msgstr "Afrique du Sud"
+
+#: make/../src/bundle.js:13919 make/../src/lib/country/iso2.js:229
+msgid "Zambia"
+msgstr "Zambie"
+
+#: make/../src/bundle.js:13920 make/../src/lib/country/iso2.js:230
+msgid "Zimbabwe"
+msgstr "Zimbabwe"
+
+#: make/../src/bundle.js:13921 make/../src/lib/country/iso2.js:231
+msgid "Macao"
+msgstr "Macao"
+
+#: make/../src/info/InfoPosition.js:24
+#, fuzzy
+msgid "Position"
+msgstr "Destination"
+
+#: make/../src/info/InfoPosition.js:32
+#, fuzzy
+msgid "Course / Heading"
+msgstr "Cap"
+
+#: make/../src/info/InfoPosition.js:40
+msgid "Message Received"
+msgstr ""
+
+#: make/../src/lib/auth/EditUserPage.js:173
+msgid "New User"
+msgstr ""
+
+#: make/../src/lib/auth/EditUserPage.js:175
+msgid "Edit User"
+msgstr ""
+
+#: make/../src/lib/auth/EditUserPage.js:177
+#: make/../src/lib/auth/UserOverlay.js:66
+msgid "Profile"
+msgstr ""
+
+#: make/../src/lib/auth/EditUserPage.js:193
+#, fuzzy
+msgid "User Name"
+msgstr "Nom"
+
+#: make/../src/lib/auth/EditUserPage.js:207
+#: make/../src/lib/auth/EditUserPage.js:245
+msgid "Required"
+msgstr ""
+
+#: make/../src/lib/auth/EditUserPage.js:212
+msgid "First Name"
+msgstr ""
+
+#: make/../src/lib/auth/EditUserPage.js:223
+#, fuzzy
+msgid "Last Name"
+msgstr "Nom"
+
+#: make/../src/lib/auth/EditUserPage.js:234
+#: make/../src/lib/auth/LoginPanel.js:111
+msgid "Password"
+msgstr "Mot de passe"
+
+#: make/../src/lib/auth/EditUserPage.js:250
+#, fuzzy
+msgid "Verify Password"
+msgstr "Mot de passe"
+
+#: make/../src/lib/auth/EditUserPage.js:261
+msgid "Passwords do not match"
+msgstr ""
+
+#: make/../src/lib/auth/EditUserPage.js:271
+#: make/../src/lib/auth/EditUserPage.js:277
+#: make/../src/lib/auth/ListUsersPage.js:118
+msgid "Administrator"
+msgstr ""
+
+#: make/../src/lib/auth/EditUserPage.js:284
+msgid "Notes"
+msgstr ""
+
+#: make/../src/lib/auth/EditUserPage.js:298
+msgid "Save"
+msgstr ""
+
+#: make/../src/lib/auth/EditUserPage.js:301
+#: make/../src/zones/ZoneInfoPanel.js:75
+msgid "Remove"
+msgstr ""
+
+#: make/../src/lib/auth/EditUserPage.js:304
+msgid "Confirm"
+msgstr ""
+
+#: make/../src/lib/auth/ListUsersPage.js:76
+#: make/../src/lib/auth/UsersButton.js:22
+msgid "Users"
+msgstr ""
+
+#: make/../src/lib/auth/ListUsersPage.js:79
+msgid "Add User"
+msgstr ""
+
+#: make/../src/lib/auth/ListUsersPage.js:116
+msgid "Operator"
+msgstr ""
+
+#: make/../src/lib/auth/LoginPanel.js:90
+msgid "Login Failed"
+msgstr ""
+
+#: make/../src/lib/auth/LoginPanel.js:92
+#: make/../src/lib/components/ErrorModal.js:39
+#, fuzzy
+msgid "Service Unavailable"
+msgstr "Non disponible"
+
+#: make/../src/lib/auth/LoginPanel.js:107
+msgid "Name"
+msgstr "Nom"
+
+#: make/../src/lib/auth/LoginPanel.js:116
+msgid "Sign In"
+msgstr "Connexion"
+
+#: make/../src/lib/auth/LogoutModal.js:46
+#: make/../src/lib/auth/LogoutModal.js:53
+#: make/../src/lib/auth/UserOverlay.js:67
+msgid "Logout"
+msgstr ""
+
+#: make/../src/lib/auth/LogoutModal.js:50
+msgid "Are you sure you want to logout?"
+msgstr ""
+
+#: make/../src/lib/auth/LogoutModal.js:54
+#, fuzzy
+msgid "Cancel"
+msgstr "France"
+
+#: make/../src/lib/components/AdminButton.js:33
+#: make/../src/lib/components/AdminMenu.js:26
+msgid "Administration"
+msgstr ""
+
+#: make/../src/lib/components/LatencyIndicator.js:69
+msgid "Working"
+msgstr ""
+
+#: make/../src/lib/patterns.js:139
+msgid "Solid"
+msgstr ""
+
+#: make/../src/lib/patterns.js:140
+msgid "Horizontal lines"
+msgstr ""
+
+#: make/../src/lib/patterns.js:141
+msgid "Vertical lines"
+msgstr ""
+
+#: make/../src/lib/patterns.js:142
+msgid "Slashes"
+msgstr ""
+
+#: make/../src/lib/patterns.js:143
+msgid "Backslashes"
+msgstr ""
+
+#: make/../src/lib/patterns.js:144
+msgid "Crosses"
+msgstr ""
+
+#: make/../src/lib/patterns.js:145
+msgid "Diagonal crosses"
+msgstr ""
+
+#: make/../src/measure/Compass.js:23
+msgid "Compass"
+msgstr ""
+
+#: make/../src/measure/Compass.js:26
+msgid "Click on the map to place the center of the compass"
+msgstr ""
+
+#: make/../src/measure/Compass.js:27
+msgid "Move across the map to get distances from that point"
+msgstr ""
+
+#: make/../src/measure/Compass.js:28
+msgid "Click on the map to reset"
+msgstr ""
+
+#: make/../src/measure/Compass.js:29 make/../src/measure/Ruler.js:24
+msgid "Click on the X button above when done"
+msgstr ""
+
+#: make/../src/measure/MeasureButton.js:33
+#: make/../src/measure/MeasurePanel.js:88
+msgid "Measure"
+msgstr ""
+
+#: make/../src/measure/MeasurePanel.js:106
+#: make/../src/radar/RadarInfoPanel.js:50
+#: make/../src/radar/RadarTooltipPanel.js:39
+msgid "Distance"
+msgstr "Distance"
+
+#: make/../src/measure/MeasurePanel.js:112
+msgid "Bearing"
+msgstr ""
+
+#: make/../src/measure/MeasurePanel.js:120
+msgid "Instructions"
+msgstr ""
+
+#: make/../src/measure/Ruler.js:17
+msgid "Ruler"
+msgstr ""
+
+#: make/../src/measure/Ruler.js:20
+msgid "Click on the map to start the ruler"
+msgstr ""
+
+#: make/../src/measure/Ruler.js:21
+msgid "Move across the map to measure distance"
+msgstr ""
+
+#: make/../src/measure/Ruler.js:22
+msgid "Click on the map to drop a waypoint and change direction"
+msgstr ""
+
+#: make/../src/measure/Ruler.js:23
+msgid "Double click on the map to reset"
+msgstr ""
+
+#: make/../src/radar/radar_formatter.js:32
+msgid "Radar Target #{{number}}"
+msgstr ""
+
+#. L10n: Closest point of approach time is increasing
+#: make/../src/radar/radar_formatter.js:76
+msgid "(increasing)"
+msgstr ""
+
+#: make/../src/radar/radar_formatter.js:102
+msgid "Automatic"
+msgstr "Automatique"
+
+#. L10n: Opposite of Automatic
+#: make/../src/radar/radar_formatter.js:105
+msgid "Manual"
+msgstr "Manuel"
+
+#: make/../src/radar/radar_formatter.js:107
+msgid "Reported"
+msgstr "Rapporté"
+
+#: make/../src/radar/RadarAlertMatch.js:27
+msgid "Radar Track #"
+msgstr ""
+
+#: make/../src/radar/RadarInfoPanel.js:54
+msgid "Closest point of approach"
+msgstr "Dist. Point Rapprochement Maximal"
+
+#. L10n: Followed by a time, as in 3 minutes, 52 seconds}
+#: make/../src/radar/RadarInfoPanel.js:59
+msgid "Closest point in"
+msgstr "Durée PRM"
+
+#: make/../src/radar/RadarInfoPanel.js:63
+msgid "Acquisition Type"
+msgstr "Acquisition"
+
+#: make/../src/sart/init.js:48
+#, fuzzy
+msgid "Search and Rescue Transponders"
+msgstr "Recherche et sauvetage"
+
+#: make/../src/sart/sart_formatter.js:11
+msgid "MOB"
+msgstr ""
+
+#: make/../src/sart/sart_formatter.js:14
+msgid "EPIRB"
+msgstr ""
+
+#: make/../src/sart/sart_formatter.js:17
+msgid "SART"
+msgstr ""
+
+#: make/../src/sart/sart_formatter.js:26
+msgid "Man Overboard"
+msgstr ""
+
+#: make/../src/sart/sart_formatter.js:28
+msgid "Emergency Position Indicating Radio Beacon"
+msgstr ""
+
+#: make/../src/sart/sart_formatter.js:30
+#, fuzzy
+msgid "Search and Rescue Transponder"
+msgstr "Recherche et sauvetage"
+
+#: make/../src/sart/SARTAlertMatch.js:34 make/../src/sart/SARTInfoPanel.js:30
+#: make/../src/sart/SARTTooltipPanel.js:29
+msgid "Test"
+msgstr ""
+
+#: make/../src/station/StationInfoPanel.jsx:32
+msgid "Latitude"
+msgstr "Latitude"
+
+#: make/../src/station/StationInfoPanel.jsx:36
+msgid "Longitude"
+msgstr "Longitude"
+
+#: make/../src/tooltip/TooltipPanel.js:40
+msgid "Unavailable"
+msgstr "Non disponible"
+
+#: make/../src/zones/EditZonePanel.js:299 make/../src/zones/ZoneInfoPanel.js:66
+#: make/../src/zones/ZoneTooltipPanel.js:31
+#, fuzzy
+msgid "Zone"
+msgstr "Zones"
+
+#: make/../src/zones/EditZonePanel.js:340
+#: make/../src/zones/ListZonesPanel.js:146 make/../src/zones/ZoneButton.js:28
+msgid "Zones"
+msgstr "Zones"
+
+#: make/../src/zones/EditZonePanel.js:343
+msgid "Reset"
+msgstr ""
+
+#: make/../src/zones/EditZonePanel.js:344
+msgid "Accept"
+msgstr ""
+
+#: make/../src/zones/EditZonePanel.js:353
+msgid "Zone name"
+msgstr ""
+
+#: make/../src/zones/EditZonePanel.js:361
+#, fuzzy
+msgid "Description"
+msgstr "Destination"
+
+#: make/../src/zones/EditZonePanel.js:366
+msgid "Style"
+msgstr ""
+
+#: make/../src/zones/EditZonePanel.js:381
+msgid "Fill Color"
+msgstr ""
+
+#: make/../src/zones/EditZonePanel.js:387
+msgid "Line Color"
+msgstr ""
+
+#: make/../src/zones/EditZonePanel.js:408
+msgid "When entering the zone"
+msgstr ""
+
+#: make/../src/zones/EditZonePanel.js:413
+msgid "When leaving the zone"
+msgstr ""
+
+#: make/../src/zones/init.js:54
+msgid "Enter"
+msgstr ""
+
+#: make/../src/zones/init.js:60
+msgid "Leave"
+msgstr ""
+
+#. L10n: Save dialog type, do not translate values in parenthesis
+#: make/../src/zones/io.js:10
+msgid "GeoJSON (*.json, *.geojson)"
+msgstr ""
+
+#: make/../src/zones/io.js:13
+msgid "Export Zones"
+msgstr ""
+
+#: make/../src/zones/io.js:30
+msgid "Error"
+msgstr ""
+
+#: make/../src/zones/io.js:31
+msgid "OK"
+msgstr ""
+
+#: make/../src/zones/io.js:32
+msgid "Unable to save zones"
+msgstr ""
+
+#: make/../src/zones/ListZonesPanel.js:153
+msgid "Export"
+msgstr ""
+
+#: make/../src/zones/ListZonesPanel.js:158
+#, fuzzy
+msgid "New Zone"
+msgstr "Nouvelle-Zélande"
+
+#: make/../src/zones/ZoneInfoPanel.js:74
+msgid "Modify"
+msgstr ""

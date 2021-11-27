@@ -1,0 +1,33 @@
+#!/bin/bash
+
+cd $(dirname $0)/..
+
+NAME=$(grep description package.json | cut -f4 -d\")
+
+if [ ! "$DIRTY" ] ; then
+    echo "Cleaning work directories"
+    mkdir -p dist build/app
+    node make/create-electron-build-package-json.js
+    cd build/app/ && yarn install; cd -;
+fi
+
+echo "Building source"
+yarn build:production
+
+echo "Copying source to build directory"
+cp -r locales webpack.config.*.js src ../../yarn.lock main build/app
+
+echo "Installing production dependencies"
+# cd build/app/ && yarn install; cd -;
+
+# electron-packager should handle this for us, it will remove an devDependency from the existing
+# node_modules directory, so re-running this wont do anything.
+#( cd build/app ; rm -rf node_modules ; yarn install --production --ignore-optional )
+
+# rm -rf build/app/node_modules/closure-util
+#rm -rf build/app/node_modules/openlayers/{doc,coverage,test,examples,changelog,test_rendering,config,tasks,src,node_modules,bin}
+# rm -rf build/app/node_modules/json5/test
+# rm -rf build/app/node_modules/parse-asn1/test
+# rm -rf build/app/node_modules/module-deps/{bin,test}
+# rm -rf build/app/node_modules/es5-ext/test
+# rm -rf build/app/node_modules/browser-resolve/node_modules/resolve/test

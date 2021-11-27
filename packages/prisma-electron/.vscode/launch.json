@@ -1,0 +1,120 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Prisma localhost",
+            "protocol": "inspector",
+            "outputCapture": "std",
+            "env": {
+                "NODE_ENV": "development"
+            },
+            "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron",
+            "runtimeArgs": [
+                ".",
+                "--remote-debugging-port=9223",
+                "--config=http://localhost:8081/api/v2/config.json"
+            ],
+            "windows": {
+                "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron.cmd"
+            }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Prisma development.json",
+            "protocol": "inspector",
+            //"console": "integratedTerminal",
+            "outputCapture": "std",
+            "env": {
+                "NODE_ENV": "development"
+            },
+            "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron",
+            "runtimeArgs": [
+                ".",
+                "--serverEnv=development",
+                "--remote-debugging-port=9223",
+            ],
+            "windows": {
+                "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron.cmd"
+            }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Prisma Ravens",
+            "protocol": "inspector",
+            //"console": "integratedTerminal",
+            "outputCapture": "std",
+            "env": {
+                "NODE_ENV": "development"
+            },
+            "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron",
+            "runtimeArgs": [
+                ".",
+                "--serverEnv=development",
+                "--remote-debugging-port=9223",
+                "--config=http://10.20.32.21:8081/api/v2/config.json"
+            ],
+            "windows": {
+                "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron.cmd"
+            }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Prisma fleet.mcmurdo.io",
+            "protocol": "inspector",
+            //"console": "integratedTerminal",
+            "outputCapture": "std",
+            "env": {
+                "NODE_ENV": "development"
+            },
+            "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron",
+            "runtimeArgs": [
+                ".",
+                "--serverEnv=development",
+                "--remote-debugging-port=9223",
+                "--config=http://fleet.mcmurdo.io:8081/api/v2/config.json"
+            ],
+            "windows": {
+                "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron.cmd"
+            }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Prisma demo.mcmurdo.io",
+            "protocol": "inspector",
+            //"console": "integratedTerminal",
+            "outputCapture": "std",
+            "env": {
+                "NODE_ENV": "development"
+            },
+            "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron",
+            "runtimeArgs": [
+                ".",
+                "--serverEnv=development",
+                "--remote-debugging-port=9223",
+                "--config=http://demo.mcmurdo.io:8081/api/v2/config.json"
+            ],
+            "windows": {
+                "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron.cmd"
+            }
+        },
+        {
+            "name": "Electron: Renderer",
+            "type": "chrome",
+            "request": "attach",
+            "port": 9223,
+            "webRoot": "${workspaceRoot}/src",
+            "timeout": 10000,
+            "smartStep": true,
+            "skipFiles": [
+                "node_modules/"
+            ],
+        },
+    ],
+}

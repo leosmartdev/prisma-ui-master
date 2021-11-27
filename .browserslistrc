@@ -1,0 +1,7 @@
+# Browsers we support
+
+Chrome >= 58
+# Will be converted to chrome
+Electron >= 1.8
+
+# To list out browers in a list as parsed from this file, run `npx browserslist`

@@ -1,0 +1,22 @@
+{
+  "dist/prisma-map.umd.js": {
+    "bundled": 60053,
+    "minified": 19806,
+    "gzipped": 6612
+  },
+  "dist/prisma-map.cjs.js": {
+    "bundled": 122185,
+    "minified": 92684,
+    "gzipped": 25366
+  },
+  "dist/index.js": {
+    "bundled": 122185,
+    "minified": 92684,
+    "gzipped": 25366
+  },
+  "./dist/prisma-map.umd.js": {
+    "bundled": 366421,
+    "minified": 135578,
+    "gzipped": 33362
+  }
+}

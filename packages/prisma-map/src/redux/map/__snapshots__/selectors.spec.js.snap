@@ -1,0 +1,335 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`redux/map/selectors createStylesForAllMaps add features to all maps that match 1`] = `
+Object {
+  "bar": Object {
+    "layers": Array [
+      Object {
+        "id": "layer2",
+        "source": "generated:layer2",
+      },
+      Object {
+        "id": "layer5",
+        "source": "generated:layer5",
+      },
+    ],
+    "mapId": "bar",
+    "sources": Object {
+      "generated:layer2": Object {
+        "data": Object {
+          "features": Array [],
+          "type": "FeatureCollection",
+        },
+        "type": "geojson",
+      },
+      "generated:layer5": Object {
+        "data": Object {
+          "features": Array [
+            Object {
+              "geometry": Object {
+                "coordinates": Array [
+                  0,
+                  1,
+                ],
+                "type": "Point",
+              },
+              "properties": Object {
+                "layerId": "layer3",
+              },
+              "type": "Feature",
+            },
+          ],
+          "type": "FeatureCollection",
+        },
+        "type": "geojson",
+      },
+      "url": Object {
+        "type": "geojson",
+        "url": "http://foo.com",
+      },
+    },
+  },
+  "baz": Object {
+    "layers": Array [
+      Object {
+        "id": "layer2",
+        "source": "generated:layer2",
+      },
+      Object {
+        "id": "layer4",
+        "source": "generated:layer4",
+      },
+    ],
+    "mapId": "baz",
+    "sources": Object {
+      "generated:layer2": Object {
+        "data": Object {
+          "features": Array [],
+          "type": "FeatureCollection",
+        },
+        "type": "geojson",
+      },
+      "generated:layer4": Object {
+        "data": Object {
+          "features": Array [],
+          "type": "FeatureCollection",
+        },
+        "type": "geojson",
+      },
+      "url": Object {
+        "type": "geojson",
+        "url": "http://foo.com",
+      },
+    },
+  },
+  "foo": Object {
+    "layers": Array [
+      Object {
+        "id": "layer1",
+        "source": "url",
+      },
+      Object {
+        "id": "layer2",
+        "source": "generated:layer2",
+      },
+      Object {
+        "id": "layer3",
+        "source": "generated:layer3",
+      },
+      Object {
+        "id": "layer4",
+        "source": "generated:layer4",
+      },
+      Object {
+        "id": "layer5",
+        "source": "generated:layer5",
+      },
+    ],
+    "mapId": "foo",
+    "sources": Object {
+      "generated:layer2": Object {
+        "data": Object {
+          "features": Array [],
+          "type": "FeatureCollection",
+        },
+        "type": "geojson",
+      },
+      "generated:layer3": Object {
+        "data": Object {
+          "features": Array [],
+          "type": "FeatureCollection",
+        },
+        "type": "geojson",
+      },
+      "generated:layer4": Object {
+        "data": Object {
+          "features": Array [],
+          "type": "FeatureCollection",
+        },
+        "type": "geojson",
+      },
+      "generated:layer5": Object {
+        "data": Object {
+          "features": Array [
+            Object {
+              "geometry": Object {
+                "coordinates": Array [
+                  0,
+                  1,
+                ],
+                "type": "Point",
+              },
+              "properties": Object {
+                "layerId": "layer3",
+              },
+              "type": "Feature",
+            },
+          ],
+          "type": "FeatureCollection",
+        },
+        "type": "geojson",
+      },
+      "url": Object {
+        "type": "geojson",
+        "url": "http://foo.com",
+      },
+    },
+  },
+}
+`;
+
+exports[`redux/map/selectors createStylesForAllMaps adds features to proper layer sources 1`] = `
+Object {
+  "foo": Object {
+    "layers": Array [
+      Object {
+        "id": "layer1",
+        "source": "url",
+      },
+      Object {
+        "id": "layer2",
+        "source": "generated:layer2",
+      },
+    ],
+    "mapId": "foo",
+    "sources": Object {
+      "generated:layer2": Object {
+        "data": Object {
+          "features": Array [
+            Object {
+              "geometry": Object {
+                "coordinates": Array [
+                  0,
+                  1,
+                ],
+                "type": "Point",
+              },
+              "properties": Object {
+                "bar": "baz",
+              },
+              "type": "Feature",
+            },
+            Object {
+              "geometry": Object {
+                "coordinates": Array [
+                  1,
+                  2,
+                ],
+                "type": "Point",
+              },
+              "properties": Object {
+                "bar": "foo",
+              },
+              "type": "Feature",
+            },
+          ],
+          "type": "FeatureCollection",
+        },
+        "type": "geojson",
+      },
+      "url": Object {
+        "type": "geojson",
+        "url": "http://foo.com",
+      },
+    },
+  },
+}
+`;
+
+exports[`redux/map/selectors createStylesForAllMaps only adds a feature to the first layer that matches 1`] = `
+Object {
+  "foo": Object {
+    "layers": Array [
+      Object {
+        "id": "layer1",
+        "source": "url",
+      },
+      Object {
+        "id": "layer2",
+        "source": "generated:layer2",
+      },
+      Object {
+        "id": "layer3",
+        "source": "generated:layer3",
+      },
+      Object {
+        "id": "layer4",
+        "source": "generated:layer4",
+      },
+    ],
+    "mapId": "foo",
+    "sources": Object {
+      "generated:layer2": Object {
+        "data": Object {
+          "features": Array [],
+          "type": "FeatureCollection",
+        },
+        "type": "geojson",
+      },
+      "generated:layer3": Object {
+        "data": Object {
+          "features": Array [],
+          "type": "FeatureCollection",
+        },
+        "type": "geojson",
+      },
+      "generated:layer4": Object {
+        "data": Object {
+          "features": Array [
+            Object {
+              "geometry": Object {
+                "coordinates": Array [
+                  0,
+                  1,
+                ],
+                "type": "Point",
+              },
+              "properties": Object {
+                "layerId": "layer3",
+              },
+              "type": "Feature",
+            },
+          ],
+          "type": "FeatureCollection",
+        },
+        "type": "geojson",
+      },
+      "url": Object {
+        "type": "geojson",
+        "url": "http://foo.com",
+      },
+    },
+  },
+}
+`;
+
+exports[`redux/map/selectors getStylesForLoadedMaps() adds all sources and layers listed in dynamicLayers 1`] = `
+Object {
+  "foo": Object {
+    "layers": Array [
+      Object {
+        "id": "layer1",
+        "source": "generated:layer1",
+        "type": "circle",
+      },
+      Object {
+        "id": "layer2",
+        "source": "generated:layer2",
+        "type": "fill",
+      },
+    ],
+    "mapId": "foo",
+    "sources": Object {
+      "generated:layer1": Object {
+        "data": Object {
+          "features": Array [],
+          "type": "FeatureCollection",
+        },
+        "type": "geojson",
+      },
+      "generated:layer2": Object {
+        "data": Object {
+          "features": Array [],
+          "type": "FeatureCollection",
+        },
+        "type": "geojson",
+      },
+    },
+  },
+}
+`;
+
+exports[`redux/map/selectors getStylesForLoadedMaps() only returns generated styles for loaded maps 1`] = `
+Object {
+  "bar": Object {
+    "layers": Array [],
+    "mapId": "bar",
+    "sources": Object {},
+  },
+  "foo": Object {
+    "layers": Array [],
+    "mapId": "foo",
+    "sources": Object {},
+  },
+}
+`;

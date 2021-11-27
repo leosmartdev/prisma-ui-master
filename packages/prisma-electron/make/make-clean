@@ -1,0 +1,13 @@
+#!/bin/bash
+
+cd $(dirname $0)/..
+
+if [ "$1" == "dist" ]; then
+    rm -rf dist/
+    rm -rf build/
+    rm -f *.log
+    rm -rf node_modules/
+fi
+
+rm -f src/bundle*.js
+rm -f src/bundle*.map

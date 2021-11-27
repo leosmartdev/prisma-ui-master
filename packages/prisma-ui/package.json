@@ -1,0 +1,47 @@
+{
+  "name": "@prisma/ui",
+  "productName": "prisma-ui",
+  "version": "1.8.1",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@material-ui/core": "^3.9.3",
+    "@material-ui/icons": "^3.0.2",
+    "@storybook/cli": "^5.0.11",
+    "color": "^3.0.0",
+    "loglevel": "^1.6.1",
+    "prop-types": "^15.6.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "rollup-plugin-terser": "^4.0.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "canvas": "^2.8.0",
+    "eslint": "^5.16.0",
+    "jest": "^24.7.1",
+    "rollup": "^1.11.3"
+  },
+  "peerDependencies": {
+    "prop-types": "^15.6.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "redux": "^4.0.0"
+  },
+  "scripts": {
+    "build": "yarn build:cjs && yarn build:esm && yarn build:es && yarn build:umd && yarn copy-files",
+    "build:cjs": "cross-env NODE_ENV=production BABEL_ENV=cjs babel --config-file ../../babel.config.js ./src --out-dir ./dist --ignore \"**/*.spec.js\"",
+    "build:esm": "cross-env NODE_ENV=production BABEL_ENV=esm babel --config-file ../../babel.config.js ./src --out-dir ./dist/esm --ignore \"**/*.spec.js\"",
+    "build:es": "cross-env NODE_ENV=production BABEL_ENV=es babel --config-file ../../babel.config.js ./src --out-dir ./dist/es --ignore \"**/*.spec.js\"",
+    "build:umd": "cross-env BABEL_ENV=production-umd rollup -c ./rollup.config.js",
+    "copy-files": "node ./scripts/copy-files.js",
+    "dist:clean": "rm -rf dist/ && rm -rf node_modules/ && rm -rf storybook-static/",
+    "test": "CURRENT_DIR=`pwd` && cd ../../ && yarn test ${CURRENT_DIR}",
+    "storybook": "start-storybook -s ../../node_modules -p 6008",
+    "build-storybook": "build-storybook --quiet"
+  }
+}

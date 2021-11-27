@@ -1,0 +1,11 @@
+{
+    "name": "@NAME@",
+    "slug": "@SLUG@",
+    "version": "@VERSION@",
+    "timestamp": "@TIMESTAMP@",
+    "releaseDate": "@RELEASE_DATE@",
+    "commit": "@COMMIT@",
+    "commitDisplay": "@COMMIT_DISPLAY@",
+    "copyright": "Copyright © 2016 - 2017 McMurdo Group. All Rights Reserved.",
+    "company": "McMurdo Group"
+}

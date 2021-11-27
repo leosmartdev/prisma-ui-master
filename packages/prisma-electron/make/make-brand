@@ -1,0 +1,43 @@
+#!/bin/bash
+
+set -e
+
+cd $(dirname $0)/..
+
+BRAND_JSON="build/app/main/brand.json"
+BRAND=$1
+VERSION=$(grep -w version package.json | cut -d\" -f4)
+NAME=$(grep packageName package.json | cut -d\" -f4)
+COMMIT=$(git rev-parse --short HEAD)
+TIMESTAMP=$(date +%y%m%d.%H%M%S)
+RELEASE_DATE=$(date -u)
+BRANCH=$CI_BUILD_REF_NAME
+[ "$BRANCH" ] || BRANCH=$(git rev-parse --abbrev-ref HEAD)
+
+. brands/$BRAND/brand.conf
+
+case $BRANCH in
+    master|stable|release)
+        COMMIT_DISPLAY="$COMMIT"
+        ;;
+    *)
+        COMMIT_DISPLAY="$COMMIT\ ($BRANCH)"
+        ;;
+esac
+
+echo "Branding: $NAME"
+
+SEDFLAGS="-i"
+if [ $(uname) == "Darwin" ] ; then
+    SEDFLAGS="-i .bak"
+fi
+
+sed $SEDFLAGS "s/@NAME@/$NAME/g"                 $BRAND_JSON
+sed $SEDFLAGS "s/@SLUG@/$SLUG/g"                 $BRAND_JSON
+sed $SEDFLAGS "s/@VERSION@/$VERSION/g"           $BRAND_JSON
+sed $SEDFLAGS "s/@TIMESTAMP@/$TIMESTAMP/g"       $BRAND_JSON
+sed $SEDFLAGS "s/@RELEASE_DATE@/$RELEASE_DATE/g" $BRAND_JSON
+sed $SEDFLAGS "s/@COMMIT@/$COMMIT/g"             $BRAND_JSON
+# NOTE: Many git branches have / in them, so using a different
+# delimeter to avoid sed errors. 
+sed $SEDFLAGS "s?@COMMIT_DISPLAY@?$COMMIT_DISPLAY?g"             $BRAND_JSON

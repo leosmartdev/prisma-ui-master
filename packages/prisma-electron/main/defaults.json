@@ -1,0 +1,16 @@
+{
+    "locales": [
+        ["en-US", "English (United States)"],
+        ["en-GB", "English (Great Britain)"],
+        ["fr",    "Français"]
+    ],
+    "locale": "en-US",
+    "lon": 104,
+    "lat": 1.25,
+    "zoom": 11,
+    "distance": "nauticalMiles",
+    "shortDistance": "meters",
+    "speed": "knots",
+    "coordinateFormat": "degreesMinutes",
+    "timeZone": "UTC"
+}

@@ -1,0 +1,64 @@
+{
+  "name": "@prisma/map",
+  "productName": "prisma-map",
+  "version": "1.8.1",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/esm/index.js",
+  "browser": "./dist/prisma-map.umd.js",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@mapbox/mapbox-gl-draw": "^1.0.9",
+    "@material-ui/core": "^3.9.3",
+    "@turf/bearing": "^6.0.1",
+    "@turf/distance": "^6.0.1",
+    "@turf/invariant": "^6.1.2",
+    "@turf/length": "^6.0.2",
+    "@turf/turf": "^5.1.6",
+    "immutable": "^3.8.2",
+    "loglevel": "^1.6.1",
+    "mapbox-gl": "^0.53.1",
+    "normalizr": "^3.2.4",
+    "prop-types": "^15.6.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-redux": "^7.0.2",
+    "redux": "^4.0.0",
+    "redux-actions": "^2.4.0",
+    "redux-observable": "^1.0.0",
+    "rxjs": "^6.2.1",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@storybook/cli": "^5.0.8",
+    "storybook-addon-redux-listener": "^0.1.7",
+    "concat": "^1.0.3",
+    "eslint": "^5.16.0",
+    "jest": "^24.7.1",
+    "redux-logger": "^3.0.6",
+    "redux-mock-store": "^1.5.3",
+    "rollup": "^1.11.3"
+  },
+  "peerDependencies": {
+    "prop-types": "^15.6.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "redux": "^4.0.0"
+  },
+  "scripts": {
+    "build": "yarn build:css && yarn build:cjs && yarn build:esm && yarn build:es && yarn build:umd && yarn copy-files",
+    "build:cjs": "cross-env NODE_ENV=production BABEL_ENV=cjs babel --config-file ../../babel.config.js ./src --out-dir ./dist --ignore \"**/*.spec.js\"",
+    "build:css": "mkdir -p dist/ && concat -o dist/prisma-map.css ../../node_modules/mapbox-gl/dist/mapbox-gl.css ../../node_modules/@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.css",
+    "build:esm": "cross-env NODE_ENV=production BABEL_ENV=esm babel --config-file ../../babel.config.js ./src --out-dir ./dist/esm --ignore \"**/*.spec.js\"",
+    "build:es": "cross-env NODE_ENV=production BABEL_ENV=es babel --config-file ../../babel.config.js ./src --out-dir ./dist/es --ignore \"**/*.spec.js\"",
+    "build:umd": "cross-env BABEL_ENV=production-umd rollup -c ./rollup.config.js",
+    "copy-files": "node ./scripts/copy-files.js",
+    "dist:clean": "rm -rf dist/ && rm -rf node_modules/ && rm -rf storybook-static/",
+    "test": "CURRENT_DIR=`pwd` && cd ../../ && yarn test ${CURRENT_DIR}",
+    "storybook": "start-storybook -s ../../node_modules -p 6007",
+    "build-storybook": "build-storybook --quiet"
+  }
+}

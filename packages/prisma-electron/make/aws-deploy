@@ -1,0 +1,17 @@
+#!/bin/bash
+
+BASEDIR=$(dirname $0)/..
+HOST=ec2-34-206-13-248.compute-1.amazonaws.com
+
+ssh ubuntu@$HOST /bin/bash <<EOF
+rm -rf incoming
+mkdir -p incoming
+EOF
+
+scp $BASEDIR/dist/*.tar.gz $BASEDIR/dist/*.zip ubuntu@$HOST:incoming
+
+ssh ubuntu@$HOST /bin/bash <<EOF
+sudo rm -f /var/lib/html/C2*
+sudo cp incoming/*.tar.gz incoming/*.zip /var/lib/html
+EOF
+

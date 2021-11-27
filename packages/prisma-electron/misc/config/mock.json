@@ -1,0 +1,80 @@
+{
+  "client": {
+    "locale": "en-US",
+    "distance": "nauticalMiles",
+    "shortDistance": "meters",
+    "speed": "knots",
+    "coordinateFormat": "degreesMinutes",
+    "timeZone": "UTC",
+    "zoom": 10
+  },
+  "policy": {
+    "description": "Montes morbi quam ut lobortis rutrum curae porttitor nascetur mus cubilia vestibulum in semper nulla id sed ornare adipiscing eu nec etiam facilisis auctor nullam.",
+    "password": {
+      "lengthMinimum": "2",
+      "lengthMaximum": "128",
+      "pattern": "[a-zA-Z0-9_@.]",
+      "reuseMaximum": "3",
+      "durationMaximum": "2161h",
+      "durationMaximumConsequence": "RestrictedUser",
+      "authenticateFailedCountMaximum": "5",
+      "authenticateFailedMaximumConsequence": "LOCK"
+    },
+    "session": {
+      "single": "false",
+      "durationIdle": "20m",
+      "idleConsequence": "StandardUser",
+      "durationRenewal": "30m",
+      "durationMaximum": "16h"
+    },
+    "user": {
+      "inactiveDurationConsequenceLock": "2161h",
+      "inactiveDurationConsequenceDeactivate": "4320h"
+    }
+  },
+  "service": {
+    "ws": {
+      "map": "wss://2d4aa601-dc25-47f1-a3fc-f65deb57667b.mock.pstmn.io/ws/v2/view/stream",
+      "tms": "wss://2d4aa601-dc25-47f1-a3fc-f65deb57667b.mock.pstmn.io/ws/v2/"
+    },
+    "tms": {
+      "headers": {
+        "x-api-key": "e79c6a3c575a4014b77d95baa78778d8"
+      },
+      "base": "https://2d4aa601-dc25-47f1-a3fc-f65deb57667b.mock.pstmn.io/api/v2",
+      "device": "https://2d4aa601-dc25-47f1-a3fc-f65deb57667b.mock.pstmn.io/api/v2/device",
+      "fleet": "https://2d4aa601-dc25-47f1-a3fc-f65deb57667b.mock.pstmn.io/api/v2/fleet",
+      "track": "https://2d4aa601-dc25-47f1-a3fc-f65deb57667b.mock.pstmn.io/api/v2/track",
+      "incident": "https://2d4aa601-dc25-47f1-a3fc-f65deb57667b.mock.pstmn.io/api/v2/incident",
+      "communication": "https://2d4aa601-dc25-47f1-a3fc-f65deb57667b.mock.pstmn.io/api/v2/communication",
+      "notification": "https://2d4aa601-dc25-47f1-a3fc-f65deb57667b.mock.pstmn.io/api/v2/notification",
+      "vessel": "https://2d4aa601-dc25-47f1-a3fc-f65deb57667b.mock.pstmn.io/api/v2/vessel",
+      "registry": "https://2d4aa601-dc25-47f1-a3fc-f65deb57667b.mock.pstmn.io/api/v2/registry",
+      "rule": "https://2d4aa601-dc25-47f1-a3fc-f65deb57667b.mock.pstmn.io/api/v2/rule",
+      "map": "https://2d4aa601-dc25-47f1-a3fc-f65deb57667b.mock.pstmn.io/api/v2/view",
+      "zone": "https://2d4aa601-dc25-47f1-a3fc-f65deb57667b.mock.pstmn.io/api/v2/zone",
+      "file": "https://2d4aa601-dc25-47f1-a3fc-f65deb57667b.mock.pstmn.io/api/v2/file",
+      "pagination": "https://2d4aa601-dc25-47f1-a3fc-f65deb57667b.mock.pstmn.io",
+      "swagger": "https://2d4aa601-dc25-47f1-a3fc-f65deb57667b.mock.pstmn.io/api/v2/apidocs.json"
+    },
+    "aaa": {
+      "headers": {
+        "x-api-key": "e79c6a3c575a4014b77d95baa78778d8"
+      },
+      "base": "https://2d4aa601-dc25-47f1-a3fc-f65deb57667b.mock.pstmn.io/api/v2",
+      "session": "https://2d4aa601-dc25-47f1-a3fc-f65deb57667b.mock.pstmn.io/api/v2/auth/session",
+      "user": "https://2d4aa601-dc25-47f1-a3fc-f65deb57667b.mock.pstmn.io/api/v2/auth/user",
+      "role": "https://2d4aa601-dc25-47f1-a3fc-f65deb57667b.mock.pstmn.io/api/v2/auth/role",
+      "policy": "https://2d4aa601-dc25-47f1-a3fc-f65deb57667b.mock.pstmn.io/api/v2/auth/policy",
+      "profile": "https://2d4aa601-dc25-47f1-a3fc-f65deb57667b.mock.pstmn.io/api/v2/auth/profile",
+      "audit": "https://2d4aa601-dc25-47f1-a3fc-f65deb57667b.mock.pstmn.io/api/v2/auth/audit",
+      "pagination": "https://2d4aa601-dc25-47f1-a3fc-f65deb57667b.mock.pstmn.io",
+      "swagger": "https://2d4aa601-dc25-47f1-a3fc-f65deb57667b.mock.pstmn.io/api/v2/auth/apidocs.json"
+    },
+    "sim": {
+      "alert": "http://localhost:8089/v1/alert",
+      "target": "http://localhost:8089/v1/target",
+      "route": "http://localhost:8089/v1/route"
+    }
+  }
+}

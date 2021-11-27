@@ -1,0 +1,13 @@
+.md-header, .md-header-nav {
+  background-color: #424242;
+  min-height: 50px;
+}
+
+.md-tabs {
+  background-color: #646464;
+}
+
+.md-nav__link:focus, .md-nav__link:hover,
+.md-nav__link.md-nav__link--active {
+  color: #255dab;
+}

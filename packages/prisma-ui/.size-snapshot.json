@@ -1,0 +1,7 @@
+{
+  "dist/prisma-ui.umd.js": {
+    "bundled": 520586,
+    "minified": 196954,
+    "gzipped": 49352
+  }
+}
