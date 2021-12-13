@@ -1,4 +1,5 @@
 import { ipcRenderer } from 'electron';
+// require('electron-reload')(__dirname);
 import React from 'react';
 import ReactDOM from 'react-dom';
 import log from 'loglevel';
@@ -46,6 +47,7 @@ function configureLogging(config) {
 }
 
 ipcRenderer.on('init', (event, contents) => {
+  console.log(contents);
   const config = contents;
   const loggers = configureLogging(config);
   const server = new Server(config);

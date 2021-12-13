@@ -8,6 +8,7 @@ import { createAction, handleActions } from 'redux-actions';
  * - @property {string} displayName       : Displayed name of the track on the right panel checkbox list
  * - @property {bool} show                : True -> show tracks, False -> hide tracks
  * - @property {arrayOf(string)} children : The tracks belong to the track type
+ * - @property {number} delayTime         : Delayed time of the track
  */
 const initialState = {
     initFilter: false,
@@ -19,6 +20,7 @@ const initialState = {
             children: [
                 'track:ADSB',
             ],
+            delayTime: 3,
         },
         {
             type: 'ais',
@@ -30,6 +32,7 @@ const initialState = {
                 'track:Orbcomm',
                 'track:VTSAIS',
             ],
+            delayTime: 4,
         },
         {
             type: 'manual',
@@ -38,6 +41,7 @@ const initialState = {
             children: [
                 'track:Manual',
             ],
+            delayTime: 2,
         },
         {
             type: 'omnicom',
@@ -47,6 +51,7 @@ const initialState = {
                 'track:OmnicomVMS',
                 'track:OmnicomSolar',
             ],
+            delayTime: 1,
         },
         {
             type: 'radar',
@@ -56,6 +61,7 @@ const initialState = {
                 'track:Radar',
                 'track:VTSRadar',
             ],
+            delayTime: 0,
         },
         {
             type: 'sarsat',
@@ -64,6 +70,7 @@ const initialState = {
             children: [
                 'track:SARSAT',
             ],
+            delayTime: 0,
         },
         {
             type: 'sart',
@@ -72,6 +79,7 @@ const initialState = {
             children: [
                 'track:SART',
             ],
+            delayTime: 2,
         },
         {
             type: 'spidertrack',
@@ -80,14 +88,16 @@ const initialState = {
             children: [
                 'track:Spidertracks',
             ],
+            delayTime: 1,
         },
         {
             type: 'unknown',
-            displayName: 'Unkown',
+            displayName: 'Unknown',
             show: true,
             children: [
                 'unknown',
             ],
+            delayTime: 3,
         },
         {
             type: 'marker',
@@ -96,6 +106,7 @@ const initialState = {
             children: [
                 'Marker',
             ],
+            delayTime: 2,
         }
     ]
 };
@@ -105,6 +116,7 @@ const initialState = {
  */
 export const filter = createAction('filterTracks/filter');
 export const initFilter = createAction('filterTracks/init');
+export const setDelay = createAction('filterTracks/setDelay');
 
 /**
  * Reducers
@@ -129,6 +141,14 @@ export const reducer = handleActions(
             ...state,
             initFilter: action.payload,
         }),
+        [setDelay]: (state, action) => {
+            let delayList = action.payload;
+            let tracks = state.tracks.map(resultItem => {
+                return { ...resultItem, delayTime: delayList[resultItem.type] };
+            });
+
+            return { ...state, tracks };
+        },
     },
     initialState,
 );

@@ -1,0 +1,10 @@
+{
+    "title": "My React App",
+    "main": {
+      "sourceDirectory": "src"
+    },
+    "renderer": {
+      "sourceDirectory": "src",
+      "template": "src/app.html"
+    }
+}

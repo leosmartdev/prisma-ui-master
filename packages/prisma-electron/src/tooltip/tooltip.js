@@ -25,7 +25,7 @@ const getInfoThunk = (id, type, trackId) => (dispatch, getState) => {
         if (response.registry && response.registry.incidents && response.registry.incidents.length > 0) {
           loadIncidents(dispatch, getState, response, trackId);
         } else {
-          console.log(response);
+          // console.log(response);
           dispatch(success(response));
         }
       }

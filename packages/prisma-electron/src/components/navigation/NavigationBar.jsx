@@ -32,6 +32,7 @@ import NavigationBarItem from './NavigationBarItem';
 import NoteIcon from '@material-ui/icons/EventNote';
 import RemoteSiteConfigIcon from '@material-ui/icons/PermDataSetting';
 import ForumIcon from '@material-ui/icons/Forum';
+import PermDataSettingIcon from '@material-ui/icons/PermDataSetting';
 
 // Actions & Helpers
 import * as navigationActions from 'navigation/navigation';
@@ -167,6 +168,10 @@ function NavigationBar({
           <ProfileIcon />
         </NavigationBarItem>
 
+        {/* <NavigationBarMenuItem to="/mapconfig" title="Map Config">
+          <PermDataSettingIcon />
+        </NavigationBarMenuItem> */}
+
         <NavigationBarMenuItem elemKey={settingsElemKey} title="Settings" onClick={handleMenuOpen}>
           <SettingsIcon />
         </NavigationBarMenuItem>
@@ -201,6 +206,12 @@ function NavigationBar({
           <Authorization classId="RemoteSite">
             <NavigationSubMenuItem to="/remotesite-config/list" title={__('Remote Site Config')}>
               <RemoteSiteConfigIcon />
+            </NavigationSubMenuItem>
+          </Authorization>
+
+          <Authorization classId="RemoteSite">
+            <NavigationSubMenuItem to="/mapconfig" title="Map Config">
+              <PermDataSettingIcon />
             </NavigationSubMenuItem>
           </Authorization>
         </Paper>

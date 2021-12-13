@@ -311,6 +311,7 @@ class OpenLayersMap extends React.Component {
   };
 
   startStream = response => {
+    console.log("start stream. open socket. /view/stream");
     this.props.setViewId(response.ID);
     const socket = this.props.server.socket('/view/stream', this.updateExtentRequest(response.ID));
     socket.onmessage = data => setTimeout(() => this.featureUpdate(data), 0);
@@ -336,6 +337,7 @@ class OpenLayersMap extends React.Component {
 
   featureUpdate = message => {
     const parsed = JSON.parse(message.data);
+    // console.log(parsed);
     if (parsed.status !== 'CountOnly') {
       let feature = null;
       try {
@@ -804,7 +806,8 @@ OpenLayersMap.propTypes = {
     type: PropTypes.string,
     displayName: PropTypes.string,
     show: PropTypes.bool,
-    children: PropTypes.arrayOf(PropTypes.string)
+    children: PropTypes.arrayOf(PropTypes.string),
+    delayTime: PropTypes.number
   })).isRequired,
   initFilterFlag: PropTypes.bool.isRequired,
   curMarkerGeoJSON: PropTypes.any,

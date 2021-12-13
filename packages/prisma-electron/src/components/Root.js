@@ -34,6 +34,7 @@ import AudibleAlert from 'components/alerts/AudibleAlert';
 import StatusBanner from './StatusBanner';
 import SnackBanner from './SnackBanner';
 import DeviceReloadableInfoSideBar from './fleet/devices/DeviceInfoSidebar/DeviceReloadableInfoSideBar';
+import MapConfig from 'components/mapconfig/MapConfigPanel';
 
 import {
   CssBaseline,
@@ -71,7 +72,7 @@ class Root extends React.Component {
 
   render() {
     const { theme, store } = this.props;
-
+    
     // Global styles
     theme.overrides = {
       MuiTableRow: {
@@ -167,6 +168,13 @@ class Root extends React.Component {
                     path="/search"
                     component={Search}
                     title={__('Search')}
+                    routeOnClose="/"
+                  />
+                  <LeftDrawerRoute
+                    exact
+                    path="/mapconfig"
+                    component={MapConfig}
+                    title="Track Display Timeout"
                     routeOnClose="/"
                   />
                   <LeftDrawerRoute

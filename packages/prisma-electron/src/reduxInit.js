@@ -67,6 +67,7 @@ import { init as MarkerInit } from "marker/marker";
 import { init as IconInit } from "icon/icon";
 import { init as RemoteSiteConfigInit } from "remotesite-config/remotesite-config";
 import { init as MessageInit } from "message/message";
+import { init as MapConfigInit } from "map/mapconfig";
 // Add your custom init function above (they are in alphabetical order by reducer/epic name)
 
 // create the epic middleware. Do this here so we can call run when needed after store init
@@ -214,4 +215,5 @@ function addReducers(store) {
   IconInit(store);
   RemoteSiteConfigInit(store);
   MessageInit(store);
+  MapConfigInit(store);
 }
