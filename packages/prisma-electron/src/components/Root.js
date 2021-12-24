@@ -34,7 +34,7 @@ import AudibleAlert from 'components/alerts/AudibleAlert';
 import StatusBanner from './StatusBanner';
 import SnackBanner from './SnackBanner';
 import DeviceReloadableInfoSideBar from './fleet/devices/DeviceInfoSidebar/DeviceReloadableInfoSideBar';
-import MapConfig from 'components/mapconfig/MapConfigPanel';
+// import MapConfig from 'components/mapconfig/MapConfigPanel';
 
 import {
   CssBaseline,
@@ -49,6 +49,7 @@ import Audit from 'components/audit';
 import Config from 'components/config';
 import RemoteSiteConfig from 'components/remotesite-config';
 import Message from 'components/message';
+import MapConfig from 'components/mapconfig';
 
 const containerStyle = {
   alignContent: 'stretch',
@@ -153,6 +154,8 @@ class Root extends React.Component {
                 <RemoteSiteConfig />
                 {/* Messages */}
                 <Message />
+                {/* Map Config */}
+                <MapConfig />
 
                 {/* Left Drawer */}
                 <Switch>
@@ -170,13 +173,13 @@ class Root extends React.Component {
                     title={__('Search')}
                     routeOnClose="/"
                   />
-                  <LeftDrawerRoute
+                  {/* <LeftDrawerRoute
                     exact
                     path="/mapconfig"
                     component={MapConfig}
                     title="Track Display Timeout"
                     routeOnClose="/"
-                  />
+                  /> */}
                   <LeftDrawerRoute
                     exact
                     path="/info/track/:id"
@@ -255,6 +258,7 @@ class Root extends React.Component {
                   component={FitlerTracksPanel}
                   title={__('Filter Tracks')}
                   routeOnClose="/"
+                  width="400px"
                 />
                 <RightDrawerRoute
                   path="/zones"

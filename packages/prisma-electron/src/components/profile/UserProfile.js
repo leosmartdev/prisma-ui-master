@@ -37,6 +37,7 @@ const styles = theme => ({
 class UserProfile extends React.Component {
   render() {
     const { user, classes } = this.props;
+    console.log(user);
     return (
       <FlexContainer column align="start center">
         <Avatar className={classes.avatar}>{avatarInitials(user)}</Avatar>

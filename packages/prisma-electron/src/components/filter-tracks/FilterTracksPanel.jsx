@@ -13,6 +13,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import { withTransaction } from 'server/transaction';
 import { withStyles } from '@material-ui/styles';
 import { __ } from 'lib/i18n';
 
@@ -24,10 +25,16 @@ import {
   Button,
   Checkbox,
   Typography,
+  Select,
+  Input,
+  MenuItem,
+  TextField,
 } from '@material-ui/core';
 
 // Helper & Actions
 import * as actions from 'filter-tracks/filter-tracks';
+// Helper & Actions
+import * as mapconfigActions from 'map/mapconfig';
 
 import * as AISHelper from "components/map/openlayers/layers/ais";
 import * as OmnicomHelper from "components/map/openlayers/layers/omnicom";
@@ -51,24 +58,102 @@ const canvasWidth = 140;
 const canvasHeight = 25;
 
 class FilterTracksPanel extends React.Component {
+  static propTypes = {
+    tracks: PropTypes.arrayOf(PropTypes.shape({
+      type: PropTypes.string,
+      displayName: PropTypes.string,
+      show: PropTypes.bool,
+      timeout: PropTypes.number,
+      children: PropTypes.arrayOf(PropTypes.string)
+    })).isRequired,
+    defaultIcons: PropTypes.array,
+    customIcons: PropTypes.array,
+    filter: PropTypes.func.isRequired,
+    initFilter: PropTypes.func.isRequired,
+    /** @private mapDispatchToProps */
+    saveFilterTracks: PropTypes.func.isRequired,
+    /** @private withStyles */
+    classes: PropTypes.object.isRequired,
+    /** @private withTransaction */
+    createTransaction: PropTypes.func.isRequired,
+    /** @private withRouter */
+    history: PropTypes.object.isRequired,
+  };
+
   constructor(props) {
     super(props);
 
     this._isMounted = false;
     this.canvasList = [];
-    let tracks = [];
-    this.props.tracks.forEach(elem => {
-      tracks[elem.type] = elem.show;
-    })
+
+    this.delayTimeOptions = [
+      {
+        title: __('unlimited'),
+        value: 1440 * 365 * 100,
+      },
+      {
+        title: __('1 year'),
+        value: 1440 * 365,
+      },
+      {
+        title: __('3 months'),
+        value: 1440 * 90,
+      },
+      {
+        title: __('1 month'),
+        value: 1440 * 30,
+      },
+      {
+        title: __('2 weeks'),
+        value: 1440 * 14,
+      },
+      {
+        title: __('1 week'),
+        value: 1440 * 7,
+      },
+      {
+        title: __('3 days'),
+        value: 1440 * 3,
+      },
+      {
+        title: __('1 day'),
+        value: 1440,
+      },
+      {
+        title: __('12h'),
+        value: 720,
+      },
+      {
+        title: __('6h'),
+        value: 360,
+      },
+      {
+        title: __('2h'),
+        value: 120,
+      },
+      {
+        title: __('1h'),
+        value: 60,
+      },
+      {
+        title: __('30m'),
+        value: 30,
+      },
+      {
+        title: __('15m'),
+        value: 15,
+      },
+    ];
 
     this.state = {
-      tracks,
+      filterTracks: {}
     }
   }
 
   componentDidMount = () => {
     this._isMounted = true;
     this.getIconList();
+    this.getListFilterTracks();
   };
 
   componentDidUpdate = prev => {
@@ -80,6 +165,51 @@ class FilterTracksPanel extends React.Component {
   componentWillUnmount = () => {
     this._isMounted = false;
   };
+
+  async getListFilterTracks() {
+    const { createTransaction, user } = this.props;
+    // console.log(user);
+    try {
+      await createTransaction(actions.getFilterTracks(user.userId));    // user filter track setting
+      await createTransaction(mapconfigActions.listMapConfig());     // global setting
+      let state = Object.assign(this.state);
+      // console.log(this.props.tracks);
+      this.props.tracks.forEach(elem => {
+        const filterTrack = state.filterTracks[elem.type] || {};
+        state.filterTracks[elem.type] = {
+          ...filterTrack,
+          show: elem.show,
+          // timeout: elem.timeout
+        };
+      });
+      this.props.globalTracks.forEach(elem => {
+        const filterTrack = state.filterTracks[elem.type] || {};
+        state.filterTracks[elem.type] = {
+          ...filterTrack,
+          timeout: elem.timeout
+        };
+      })
+      this.setState(state);
+    } catch (error) {
+      if (this._isMounted) {
+        this.setState({
+          errorBannerText: error.message,
+        });
+      }
+    }
+  }
+
+  setTrackTimeout = (event, trackId) => {
+    // console.log(event.target.value, trackId);
+    let state = Object.assign(this.state);
+    state.filterTracks[trackId].timeout = Number(event.target.value);
+    this.setState(state);
+  };
+
+  onCancel = () => {
+    const { history } = this.props;
+    history.push('/');
+  }
 
   getIconList = () => {
     const { tracks, defaultIcons, customIcons } = this.props;
@@ -158,20 +288,25 @@ class FilterTracksPanel extends React.Component {
   };
 
   confirmed = () => {
-    this.props.filter(this.state.tracks);
+    this.props.saveFilterTracks(this.props.user.userId, this.state.filterTracks);
+    const filterTrackTimeouts = {};
+    for (let key in this.state.filterTracks) {
+      filterTrackTimeouts[key] = this.state.filterTracks[key].timeout;
+    }
+    this.props.setTrackTimeouts(filterTrackTimeouts);
     this.props.initFilter(true);
   }
 
   handleCheckboxChange = type => event => {
     let state = Object.assign(this.state);
-    state.tracks[type] = event.target.checked;
+    state.filterTracks[type].show = event.target.checked;
     this.setState(state);
   }
 
   selectAll = () => {
     let state = Object.assign(this.state);
-    for (let key in state.tracks) {
-      state.tracks[key] = true;
+    for (let key in state.filterTracks) {
+      state.filterTracks[key].show = true;
     }
 
     this.setState(state);
@@ -179,8 +314,8 @@ class FilterTracksPanel extends React.Component {
 
   deselectAll = () => {
     let state = Object.assign(this.state);
-    for (let key in state.tracks) {
-      state.tracks[key] = false;
+    for (let key in state.filterTracks) {
+      state.filterTracks[key].show = false;
     }
 
     this.setState(state);
@@ -210,10 +345,22 @@ class FilterTracksPanel extends React.Component {
   }
 
   render = () => {
-    const { classes } = this.props;
+    const { classes, session, user } = this.props;
+    // const { permissionMap } = session;
+    // console.log(permissionMap);
+    // const isAdmin = permissionMap["Administrator"] ? true : false;
+    const isAdmin = user.roles.includes('Administrator');
+    const {
+      filterTracks
+    } = this.state;
 
     let checkboxList = [];
 
+    const getDisabled = val => {
+      if (val) return { disabled: true };
+      return {};
+    };
+    
     this.props.tracks.forEach(elem => {
       checkboxList.push(
         <FormControlLabel
@@ -225,7 +372,7 @@ class FilterTracksPanel extends React.Component {
           control={
             <Checkbox
               key={'track-filters-checkbox-' + elem.type}
-              checked={this.state.tracks[elem.type]}
+              checked={Boolean((filterTracks[elem.type] && filterTracks[elem.type].show))}
               value={elem.type}
               color="secondary"
               onChange={this.handleCheckboxChange(elem.type)}
@@ -233,9 +380,23 @@ class FilterTracksPanel extends React.Component {
           }
           label={
             <FlexContainer align="space-between center">
-              <Typography variant="body1">
+              <Typography variant="body1" style={{ minWidth: '100px' }}>
                 {elem.displayName}
               </Typography>
+              <FlexContainer style={{ minWidth: '100px' }}>
+                <Select
+                  value={(filterTracks[elem.type] && filterTracks[elem.type].timeout) || '-'}
+                  onChange={(e) => this.setTrackTimeout(e, elem.type)}
+                  input={<Input id="type" fullWidth />}
+                  {...getDisabled(!isAdmin)}
+                >
+                  {this.delayTimeOptions.map(option => (
+                    <MenuItem value={option.value} key={option.value}>
+                      {option.title}
+                    </MenuItem>
+                  ))}
+                </Select>
+              </FlexContainer>
               <FlexContainer>
                 <canvas
                   ref={ref => {
@@ -272,25 +433,13 @@ class FilterTracksPanel extends React.Component {
   };
 }
 
-FilterTracksPanel.propTypes = {
-  tracks: PropTypes.arrayOf(PropTypes.shape({
-    type: PropTypes.string,
-    displayName: PropTypes.string,
-    show: PropTypes.bool,
-    children: PropTypes.arrayOf(PropTypes.string)
-  })).isRequired,
-  defaultIcons: PropTypes.array,
-  customIcons: PropTypes.array,
-  classes: PropTypes.object.isRequired,
-
-  filter: PropTypes.func.isRequired,
-  initFilter: PropTypes.func.isRequired,
-};
-
 const mapStateToProps = state => ({
-  tracks: state.filterTracks.tracks,
   defaultIcons: state.icon.defaultIcons,
   customIcons: state.icon.customIcons,
+  tracks: state.filterTracks.tracks,
+  globalTracks: state.mapconfig.tracks,
+  user: state.session.user || { userId: '', profile: {} },
+  session: state.session,
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -300,14 +449,24 @@ const mapDispatchToProps = dispatch => ({
   initFilter: (init) => {
     dispatch(actions.initFilter(init));
   },
+  saveFilterTracks: (userId, filterTracks) => {
+    dispatch(actions.saveFilterTracks(userId, filterTracks));
+  },
+  setTrackTimeouts: (filterTrackTimeouts) => {
+    dispatch(mapconfigActions.setTrackTimeouts(filterTrackTimeouts));
+  },
 });
 
 export const PureFilterTracksPanel = FilterTracksPanel;
 export default (FilterTracksPanel = withStyles(styles)(
   withRouter(
-    connect(
-      mapStateToProps,
-      mapDispatchToProps,
-    )(FilterTracksPanel)
+    withTransaction(
+      connect(
+        mapStateToProps,
+        mapDispatchToProps
+      )(
+        FilterTracksPanel
+      )
+    )
   )
 ));

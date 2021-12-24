@@ -1,5 +1,55 @@
 import { createAction, handleActions } from 'redux-actions';
 
+// Action Types
+const GET_FILTERTRACKS = 'filtertracks/get';
+const SAVE_FILTERTRACKS = 'filtertracks/save';
+
+/** *************************************
+ * Thunks
+ ************************************* */
+  
+function getFilterTracksThunk(userId) {
+    return (dispatch, getState) => {
+      const server = getState().server;
+  
+      return new Promise((resolve, reject) => {
+        server.get(`/filtertracks/get/${userId}`).then(
+          json => {
+            log.info('Got Filter Tracks', json);
+            dispatch(getFilterTracksSuccess({ userId, filterTracks: json }));
+            resolve(json);
+          },
+          error => {
+            reject(error);
+          },
+        );
+      });
+    };
+}
+
+function saveFilterTracksThunk(userId, filterTracks) {
+    return (dispatch, getState) => {
+        const server = getState().server;
+        const filterTracksArr = [];
+        for(let key in filterTracks) {
+            filterTracksArr.push({ type: key, show: filterTracks[key].show, timeout: filterTracks[key].timeout });
+        }
+
+        return new Promise((resolve, reject) => {
+            server.post(`/filtertracks/save/${userId}`, { filterTracks: filterTracksArr }).then(
+                json => {
+                    log.info('Saved Filter Tracks', json);
+                    dispatch(saveFilterTracksSuccess({ userId, filterTracks }));
+                    resolve(json);
+                },
+                error => {
+                    reject(error);
+                },
+            );
+        });
+    };
+}
+
 /**
  * Initial state
  * @property {bool} initFilter            : To initialize the map only once when filter action occurs
@@ -12,6 +62,7 @@ import { createAction, handleActions } from 'redux-actions';
  */
 const initialState = {
     initFilter: false,
+    user: { userId: "", profile: {} },
     tracks: [
         {
             type: 'adsb',
@@ -20,7 +71,7 @@ const initialState = {
             children: [
                 'track:ADSB',
             ],
-            delayTime: 3,
+            timeout: 720,
         },
         {
             type: 'ais',
@@ -32,7 +83,7 @@ const initialState = {
                 'track:Orbcomm',
                 'track:VTSAIS',
             ],
-            delayTime: 4,
+            timeout: 720,
         },
         {
             type: 'manual',
@@ -41,7 +92,7 @@ const initialState = {
             children: [
                 'track:Manual',
             ],
-            delayTime: 2,
+            timeout: 720,
         },
         {
             type: 'omnicom',
@@ -51,7 +102,7 @@ const initialState = {
                 'track:OmnicomVMS',
                 'track:OmnicomSolar',
             ],
-            delayTime: 1,
+            timeout: 720,
         },
         {
             type: 'radar',
@@ -61,7 +112,7 @@ const initialState = {
                 'track:Radar',
                 'track:VTSRadar',
             ],
-            delayTime: 0,
+            timeout: 720,
         },
         {
             type: 'sarsat',
@@ -70,7 +121,7 @@ const initialState = {
             children: [
                 'track:SARSAT',
             ],
-            delayTime: 0,
+            timeout: 720,
         },
         {
             type: 'sart',
@@ -79,7 +130,7 @@ const initialState = {
             children: [
                 'track:SART',
             ],
-            delayTime: 2,
+            timeout: 720,
         },
         {
             type: 'spidertrack',
@@ -88,7 +139,7 @@ const initialState = {
             children: [
                 'track:Spidertracks',
             ],
-            delayTime: 1,
+            timeout: 720,
         },
         {
             type: 'unknown',
@@ -97,7 +148,7 @@ const initialState = {
             children: [
                 'unknown',
             ],
-            delayTime: 3,
+            timeout: 720,
         },
         {
             type: 'marker',
@@ -106,7 +157,7 @@ const initialState = {
             children: [
                 'Marker',
             ],
-            delayTime: 2,
+            timeout: 720,
         }
     ]
 };
@@ -116,7 +167,18 @@ const initialState = {
  */
 export const filter = createAction('filterTracks/filter');
 export const initFilter = createAction('filterTracks/init');
-export const setDelay = createAction('filterTracks/setDelay');
+
+// List FilterTracks
+export const getFilterTracks = getFilterTracksThunk;
+export const getFilterTracksSuccess = createAction(
+    `${GET_FILTERTRACKS}:success`,
+    data => data,
+);
+export const saveFilterTracks = saveFilterTracksThunk;
+export const saveFilterTracksSuccess = createAction(
+    `${SAVE_FILTERTRACKS}:success`,
+    data => data,
+);
 
 /**
  * Reducers
@@ -141,13 +203,55 @@ export const reducer = handleActions(
             ...state,
             initFilter: action.payload,
         }),
-        [setDelay]: (state, action) => {
-            let delayList = action.payload;
-            let tracks = state.tracks.map(resultItem => {
-                return { ...resultItem, delayTime: delayList[resultItem.type] };
+        [getFilterTracksSuccess]: (state, action) => {
+            const {userId, filterTracks} = action.payload;
+            
+            let tracks = state.tracks;
+            
+            const filterTracksObj = {};
+            for (let i = 0; i < filterTracks.length; i++) {
+                const element = filterTracks[i];
+                filterTracksObj[element.type] = {show: element.show, timeout: element.timeout};
+            }
+            
+            tracks = tracks.map(resultItem => {
+                if (filterTracksObj[resultItem.type]) {
+                    return {
+                        ...resultItem,
+                        show: Boolean(filterTracksObj[resultItem.type].show),
+                        timeout: filterTracksObj[resultItem.type].timeout,
+                    };
+                }
+                return { ...resultItem, show: true, timeout: 720};
             });
+            
+            return {
+                ...state,
+                userId: userId,
+                tracks: tracks,
+            };
+        },
+        [saveFilterTracksSuccess]: (state, action) => {
+            const {userId, filterTracks} = action.payload;
+            console.log(userId, filterTracks);
+            let tracks = state.tracks;
 
-            return { ...state, tracks };
+            tracks = tracks.map(resultItem => {
+                if (filterTracks[resultItem.type]) {
+                    return {
+                        ...resultItem,
+                        show: Boolean(filterTracks[resultItem.type].show),
+                        timeout: filterTracks[resultItem.type].timeout,
+                    };
+                }
+                return { ...resultItem};
+            });
+            
+            return {
+                ...state,
+                userId: userId,
+                tracks: tracks,
+            };
         },
     },
     initialState,

@@ -25,25 +25,26 @@ import {
   MenuItem,
 } from '@material-ui/core';
 
+// Icons
+import EditIcon from '@material-ui/icons/Edit';
+
 // Helper & Actions
 import * as actions from 'map/mapconfig';
+import { round } from 'lodash';
 
 const styles = theme => ({
-  nullState: {
-    marginTop: theme.spacing(2),
-    marginBottom: theme.spacing(2),
-    marginLeft: theme.spacing(1),
+  container: {
+    overflow: 'auto',
+  },
+  button: {
+    marginBottom: '5px',
+  },
+  leftIcon: {
     marginRight: theme.spacing(1),
-  },
-  filter: {
-    marginBottom: 20,
-  },
-  dateTimePicker: {
-    width: '100%',
   },
 });
 
-class MapConfigPanel extends React.Component {
+class MapConfigList extends React.Component {
   static propTypes = {
     track_timeouts: PropTypes.arrayOf(PropTypes.shape({
       type: PropTypes.string,
@@ -65,75 +66,18 @@ class MapConfigPanel extends React.Component {
 
     this._isMounted = false;
 
-    this.delayTimeOptions = [
-      {
-        title: __('12h'),
-        value: 720,
-      },
-      {
-        title: __('6h'),
-        value: 360,
-      },
-      {
-        title: __('2h'),
-        value: 120,
-      },
-      {
-        title: __('1h'),
-        value: 60,
-      },
-      {
-        title: __('30m'),
-        value: 30,
-      },
-      {
-        title: __('15m'),
-        value: 15,
-      },
-    ];
-
-    // let trackTimeoutList = {};
-    // console.log(this.props.track_timeouts);
-    // this.props.track_timeouts.forEach(elem => {
-    //   trackTimeoutList[elem.type] = elem.timeout;
-    // })
+    this.noValue = '-';
 
     this.state = {
-      // sarsatDelay: 0,
-      // omnicomDelay: 1,
       trackTimeoutList: {},
       mapconfig: this.props.mapconfig
     };
   }
 
-  setSarsatDelay = event => {
-    this.setState({
-      sarsatDelay: event.target.value,
-    }, () => {
-
-    });
-  };
-
-  setOmnicomDelay = event => {
-    this.setState({
-      omnicomDelay: event.target.value,
-    }, () => {
-      
-    });
-  };
-
-  setTrackTimeout = (event, trackId) => {
-    // console.log(event.target.value, trackId);
-    let state = Object.assign(this.state);
-    state.trackTimeoutList[trackId] = event.target.value;
-    this.setState(state);
-  };
-
-  save = () => {
-    this.props.setTrackTimeouts(this.state.trackTimeoutList);
+  editConfig = () => {
     const { history } = this.props;
-    history.push('/');
-  }
+    history.push('/mapconfig/edit');
+  };
 
   componentDidMount = () => {
     this._isMounted = true;
@@ -166,12 +110,17 @@ class MapConfigPanel extends React.Component {
     } = this.props;
 
     const {
-      // sarsatDelay,
-      // omnicomDelay,
       trackTimeoutList
     } = this.state;
 
     let trackTimeoutConfigList = [];
+
+    const timeStrFromMin = (minutes) => {
+      const hour = Math.floor((minutes / 60));
+      const min = minutes % 60;
+      let timeStr = `${hour > 0 ? `${hour}h`: ''} ${min > 0 ? `${min}m`: ''}`;
+      return timeStr;
+    };
 
     this.props.track_timeouts.forEach(elem => {
       trackTimeoutConfigList.push(
@@ -180,17 +129,7 @@ class MapConfigPanel extends React.Component {
             {elem.displayName}
           </TableCell>
           <TableCell padding="none">
-            <Select
-              value={trackTimeoutList[elem.type] || 720}
-              onChange={(e) => this.setTrackTimeout(e, elem.type)}
-              input={<Input id="type" fullWidth />}
-            >
-              {this.delayTimeOptions.map(option => (
-                <MenuItem value={option.value} key={option.value}>
-                  {option.title}
-                </MenuItem>
-              ))}
-            </Select>
+            {trackTimeoutList[elem.type] ? timeStrFromMin(trackTimeoutList[elem.type]) : this.noValue}
           </TableCell>
         </TableRow>
       );
@@ -200,26 +139,33 @@ class MapConfigPanel extends React.Component {
       <div>
         {/* FILTER TOOLBAR */}
         <FlexContainer column align="start stretch" classes={{ root: classes.filter }}>
+          <FlexContainer align="end center">
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={this.editConfig}
+              className={classes.button}
+            >
+              <EditIcon
+                fontSize="small"
+                className={classes.leftIcon}
+              />
+              {__('Edit Config')}
+            </Button>
+          </FlexContainer>
           <Table>
             <TableBody>
               {trackTimeoutConfigList}
             </TableBody>
           </Table>
         </FlexContainer>
-
-        <FlexContainer column align="start stretch">
-          <Button color="primary" variant="contained" onClick={this.save}>
-            {__('Save')}
-          </Button>
-        </FlexContainer>
-
       </div>
     );
   };
 }
 
 const mapStateToProps = state => ({
-  track_timeouts: state.mapconfig.track_timeouts,
+  track_timeouts: state.mapconfig.tracks,
   mapconfig: state.mapconfig.mapconfiglist
 });
 
@@ -236,7 +182,7 @@ export default withStyles(styles)(
         mapStateToProps,
         mapDispatchToProps
       )(
-        MapConfigPanel
+        MapConfigList
       )
     )
   )

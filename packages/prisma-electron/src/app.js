@@ -47,7 +47,6 @@ function configureLogging(config) {
 }
 
 ipcRenderer.on('init', (event, contents) => {
-  console.log(contents);
   const config = contents;
   const loggers = configureLogging(config);
   const server = new Server(config);

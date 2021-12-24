@@ -122,12 +122,17 @@ class RightDrawer extends React.Component {
         </FlexContainer>
       );
     }
+    let style = {};
+    if (this.props.drawer.width !== undefined) {
+      style = { width: this.props.drawer.width, maxWidth: this.props.drawer.width, minWidth: this.props.drawer.width };
+    }
     return (
       <Drawer
         anchor="right"
         open={this.props.drawer.open}
         variant="persistent"
         classes={{ paper: this.props.classes.paper, paperAnchorRight: this.state.drawerStyle }}
+        style={style}
       >
         {appBar}
         <Container className={this.props.classes.content}>{this.props.children}</Container>
@@ -216,6 +221,7 @@ const RightDrawerRoute = ({ component: Component, ...rest }) => (
           routeOnClose={rest.routeOnClose}
           goBackOnClose={props.location.state && props.location.state.goBackOnClose}
           backButton={rest.backButton}
+          width={rest.width}
         >
           <Component {...props} />
         </RightDrawerContent>

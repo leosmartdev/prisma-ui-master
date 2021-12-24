@@ -81,7 +81,7 @@ export function reducer(state = {}, action = {}) {
             width: '350px',
           },
           right: {
-            width: '300px',
+            width: '400px',
           },
           rightDetails: {
             width: '300px',

@@ -43,6 +43,7 @@ import * as mapActions from 'map/map';
 import * as selectionActions from 'selection/selection';
 import * as infoActions from 'info/info';
 import * as filterTracksActions from "filter-tracks/filter-tracks";
+// import * as filterTracksActions from "map/mapconfig";
 import * as markerActinos from 'marker/marker';
 import * as messageActions from 'message/message';
 import { downloadFile } from 'file/download';
@@ -245,6 +246,11 @@ class OpenLayersMap extends React.Component {
             });
         });
     })
+
+    // Load filter tracks
+    createTransaction(filterTracksActions.getFilterTracks(this.props.user.userId)).then((filterTracks) => {
+      this.filterTracks();
+    });
   }
 
   componentWillUnmount() {
@@ -860,6 +866,7 @@ const mapStateToProps = state => ({
   listMarkers: state.marker.listMarkers,
   customIcons: state.icon.customIcons,
   currentTargetIcon: state.icon.currentTarget,
+  user: state.session.user || { userId: '', profile: {} },
 });
 
 const mapDispatchToProps = dispatch => ({

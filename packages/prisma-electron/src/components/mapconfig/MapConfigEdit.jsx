@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
@@ -23,6 +23,8 @@ import {
   Select,
   Input,
   MenuItem,
+  TextField,
+  Grid
 } from '@material-ui/core';
 
 // Helper & Actions
@@ -41,9 +43,15 @@ const styles = theme => ({
   dateTimePicker: {
     width: '100%',
   },
+  button: {
+    marginBottom: theme.spacing(1),
+  },
+  divider: {
+    marginBottom: theme.spacing(2),
+  },
 });
 
-class MapConfigPanel extends React.Component {
+class MapConfigEdit extends React.Component {
   static propTypes = {
     track_timeouts: PropTypes.arrayOf(PropTypes.shape({
       type: PropTypes.string,
@@ -92,47 +100,28 @@ class MapConfigPanel extends React.Component {
       },
     ];
 
-    // let trackTimeoutList = {};
-    // console.log(this.props.track_timeouts);
-    // this.props.track_timeouts.forEach(elem => {
-    //   trackTimeoutList[elem.type] = elem.timeout;
-    // })
-
     this.state = {
-      // sarsatDelay: 0,
-      // omnicomDelay: 1,
       trackTimeoutList: {},
       mapconfig: this.props.mapconfig
     };
-  }
-
-  setSarsatDelay = event => {
-    this.setState({
-      sarsatDelay: event.target.value,
-    }, () => {
-
-    });
-  };
-
-  setOmnicomDelay = event => {
-    this.setState({
-      omnicomDelay: event.target.value,
-    }, () => {
-      
-    });
   };
 
   setTrackTimeout = (event, trackId) => {
     // console.log(event.target.value, trackId);
     let state = Object.assign(this.state);
-    state.trackTimeoutList[trackId] = event.target.value;
+    state.trackTimeoutList[trackId] = Number(event.target.value);
     this.setState(state);
   };
 
   save = () => {
     this.props.setTrackTimeouts(this.state.trackTimeoutList);
     const { history } = this.props;
-    history.push('/');
+    history.push('/mapconfig/list');
+  }
+
+  onCancel = () => {
+    const { history } = this.props;
+    history.push('/mapconfig/list');
   }
 
   componentDidMount = () => {
@@ -166,8 +155,6 @@ class MapConfigPanel extends React.Component {
     } = this.props;
 
     const {
-      // sarsatDelay,
-      // omnicomDelay,
       trackTimeoutList
     } = this.state;
 
@@ -177,20 +164,34 @@ class MapConfigPanel extends React.Component {
       trackTimeoutConfigList.push(
         <TableRow key={'track-delay-list-' + elem.type}>
           <TableCell padding="none">
-            {elem.displayName}
-          </TableCell>
-          <TableCell padding="none">
-            <Select
-              value={trackTimeoutList[elem.type] || 720}
-              onChange={(e) => this.setTrackTimeout(e, elem.type)}
-              input={<Input id="type" fullWidth />}
-            >
-              {this.delayTimeOptions.map(option => (
-                <MenuItem value={option.value} key={option.value}>
-                  {option.title}
-                </MenuItem>
-              ))}
-            </Select>
+            <Grid container spacing={1}>
+              <Grid item xs={4}>
+                <Typography>
+                  {elem.displayName}
+                </Typography>
+              </Grid>
+              <Grid item xs={4}>
+                <Select
+                  value={trackTimeoutList[elem.type] || '-'}
+                  onChange={(e) => this.setTrackTimeout(e, elem.type)}
+                  input={<Input id="type" fullWidth />}
+                >
+                  {this.delayTimeOptions.map(option => (
+                    <MenuItem value={option.value} key={option.value}>
+                      {option.title}
+                    </MenuItem>
+                  ))}
+                </Select>
+              </Grid>
+              <Grid item xs={4}>
+                <TextField
+                  // label={elem.displayName}
+                  type="number"
+                  value={trackTimeoutList[elem.type] || 1}
+                  onChange={(e) => this.setTrackTimeout(e, elem.type)}
+                />
+              </Grid>
+            </Grid>
           </TableCell>
         </TableRow>
       );
@@ -208,8 +209,19 @@ class MapConfigPanel extends React.Component {
         </FlexContainer>
 
         <FlexContainer column align="start stretch">
-          <Button color="primary" variant="contained" onClick={this.save}>
-            {__('Save')}
+          <Button
+            variant="contained"
+            color="primary"
+            className={classes.button}
+            onClick={this.save}
+          >
+            {__('Save Changes')}
+          </Button>
+          <Button
+            variant="contained"
+            className={classes.button}
+            onClick={this.onCancel}>
+            {__('Cancel')}
           </Button>
         </FlexContainer>
 
@@ -219,7 +231,7 @@ class MapConfigPanel extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  track_timeouts: state.mapconfig.track_timeouts,
+  track_timeouts: state.mapconfig.tracks,
   mapconfig: state.mapconfig.mapconfiglist
 });
 
@@ -236,7 +248,7 @@ export default withStyles(styles)(
         mapStateToProps,
         mapDispatchToProps
       )(
-        MapConfigPanel
+        MapConfigEdit
       )
     )
   )

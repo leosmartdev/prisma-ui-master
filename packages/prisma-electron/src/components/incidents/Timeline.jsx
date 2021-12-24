@@ -13,23 +13,44 @@ import ContentViewGroup from 'components/layout/ContentViewGroup';
 import IncidentForwardProgress from 'components/incidents/IncidentForwardProgress';
 import SearchObjectTimeline from 'components/incidents/SearchObjectTimeline';
 import AddLogEntryContentViewGroup from 'components/incidents/log-entries/AddLogEntryContentViewGroup';
+import DropDownButton from 'components/DropDownButton';
+
+import 'date-fns';
 
 import {
   Paper,
   Typography,
   Button,
+  Avatar,
+  Chip,
+  TextField,
+  Box,
+  Grid,
+  IconButton
 } from '@material-ui/core';
+
+import DateFnsUtils from '@date-io/date-fns';
 
 import {
   SpeedDial,
   SpeedDialIcon,
-  SpeedDialAction
+  SpeedDialAction,
 } from "@material-ui/lab";
+
+import {
+  MuiPickersUtilsProvider,
+  KeyboardTimePicker,
+  KeyboardDatePicker,
+} from '@material-ui/pickers';
 
 // Icons
 import MessageIcon from '@material-ui/icons/Message';
 import FolderIcon from '@material-ui/icons/Folder';
 import TargetIcon from '@material-ui/icons/LocationSearching';
+import PictureAsPdfIcon from '@material-ui/icons/PictureAsPdf';
+import TextsmsIcon from '@material-ui/icons/Textsms';
+import ImageIcon from '@material-ui/icons/Image';
+import ClearIcon from "@material-ui/icons/Clear";
 
 // Helpers & actions
 import { types } from 'incident/log-entries';
@@ -88,8 +109,58 @@ class Timeline extends React.Component {
       errorBannerText: null,
       warningBannerText: null,
       groupBy: props.groupBy,
+      noteTypeFilter: null,
+      incidentLog: [],
+      dateRange: {from: null, to: null}
     };
   }
+
+  static noteTypeFilterOptions = [
+    { title: __('All'), id: 'none', icon: null },
+    {
+      title: __('PDF'),
+      id: 'pdf',
+      icon: (
+        <Avatar>
+          <PictureAsPdfIcon />
+        </Avatar>
+      ),
+    },
+    {
+      title: __('Image'),
+      id: 'image',
+      icon: (
+        <Avatar>
+          <ImageIcon />
+        </Avatar>
+      ),
+    },
+    {
+      title: __('Text'),
+      id: 'text',
+      icon: (
+        <Avatar>
+          <TextsmsIcon />
+        </Avatar>
+      ),
+    },
+  ];
+
+  componentDidMount() {
+    this.setState({
+      noteTypeFilter: Timeline.noteTypeFilterOptions[0],
+      incidentLog: this.props.incident.log
+    });
+  }
+
+  componentDidUpdate = prev => {
+    if (JSON.stringify(this.props.incident) != JSON.stringify(prev.incident)) {
+      const { noteTypeFilter, dateRange } = this.state;
+      this.setState({
+        incidentLog: this.filterIncidentLog(noteTypeFilter, dateRange)
+      });
+    }
+  };
 
   componentWillReceiveProps(props) {
     this.setState({
@@ -232,7 +303,7 @@ class Timeline extends React.Component {
    ********************************* */
 
   groupByType = () =>
-    this.props.incident.log.reduce((obj, entry) => {
+    this.state.incidentLog.reduce((obj, entry) => {
       // Skip search objects
       if (entry.target === true) {
         return obj;
@@ -260,7 +331,7 @@ class Timeline extends React.Component {
    *  * Date
    */
   groupByTime = () =>
-    this.props.incident.log.reduce((obj, entry) => {
+    this.state.incidentLog.reduce((obj, entry) => {
       // Skip search objects
       if (entry.target === true) {
         return obj;
@@ -275,6 +346,96 @@ class Timeline extends React.Component {
 
       return obj;
     }, {});
+
+  filterIncidentLog = (noteTypeFilter, dateRange) => {
+    // filter by note type
+    let incidentLog = this.props.incident.log;
+    if (noteTypeFilter.id === "none") {
+      incidentLog = this.props.incident.log;
+    }
+    else {
+      incidentLog = this.props.incident.log.filter((value) => {
+        switch(noteTypeFilter.id) {
+          case "image":
+            return value.attachment && value.attachment.type.indexOf("image") > -1;
+          case "text":
+            return !value.attachment;
+          case "pdf":
+            return value.attachment && value.attachment.type.indexOf("pdf") > -1;
+        }
+      });
+    }
+    // filter by date range
+    if (dateRange.from) {
+      incidentLog = incidentLog.filter((value) => {
+        const logTime = new Date(value.timestamp.seconds * 1000);
+        return logTime > dateRange.from;
+      });
+    }
+    if (dateRange.to) {
+      incidentLog = incidentLog.filter((value) => {
+        const logTime = new Date(value.timestamp.seconds * 1000 - 86400000);
+        return logTime < dateRange.to;
+      });
+    }
+    return incidentLog;
+  };
+
+  setNoteTypeFilter = filter => {
+    this.setState({
+      noteTypeFilter: filter,
+      incidentLog: this.filterIncidentLog(filter, this.state.dateRange)
+    });
+  };
+
+  setDateRange = value => {
+    this.setState({
+      dateRange: value,
+      incidentLog: this.filterIncidentLog(this.state.noteTypeFilter, value)
+    });
+  };
+
+  handleFromDateChange = value => {
+    let dateRange = this.state.dateRange;
+    if (value !== null) {
+      dateRange.from = new Date(`${value.getFullYear()}-${value.getMonth()+1}-${value.getDate()}`);
+      if (dateRange.to && dateRange.from > dateRange.to) {
+        dateRange.to = dateRange.from;
+      }
+    } else {
+      dateRange.from = null;
+    }
+    this.setState({
+      dateRange,
+      incidentLog: this.filterIncidentLog(this.state.noteTypeFilter, dateRange)
+    });
+  }
+
+  handleToDateChange = value => {
+    let dateRange = this.state.dateRange;
+    if (value !== null) {
+      dateRange.to = new Date(`${value.getFullYear()}-${value.getMonth()+1}-${value.getDate()}`);
+      if (dateRange.from && dateRange.to < dateRange.from) {
+        dateRange.from = dateRange.to;
+      }
+    } else {
+      dateRange.to = null;
+    }
+    this.setState({
+      dateRange,
+      incidentLog: this.filterIncidentLog(this.state.noteTypeFilter, dateRange)
+    });
+  }
+
+  clearAllFilters = () => {
+    const dateRange = {from: null, to: null};
+    const noteTypeFilter = Timeline.noteTypeFilterOptions[0];
+    this.setState({
+      dateRange: dateRange,
+      noteTypeFilter: noteTypeFilter,
+      incidentLog: this.filterIncidentLog(noteTypeFilter, dateRange)
+    });
+  };
 
   /** ********************************
    *
@@ -358,10 +519,14 @@ class Timeline extends React.Component {
       showSpeedDial,
       showLogEntryAdd,
       logEntryToAdd,
+      noteTypeFilter,
+      incidentLog,
+      dateRange
     } = this.state;
 
     const searchObjects = incident.log ? incident.log.filter(entry => entry.target === true) : [];
     let groups = {};
+    // console.log(noteTypeFilter, incidentLog);
     if (incident.log && incident.log.length !== 0) {
       switch (groupBy) {
         case 'type': {
@@ -374,7 +539,7 @@ class Timeline extends React.Component {
         }
         default: {
           groups = {
-            [__('Entities')]: { label: __('Entities'), entries: incident.log },
+            [__('Entities')]: { label: __('Entities'), entries: incidentLog },
           };
         }
       }
@@ -382,8 +547,32 @@ class Timeline extends React.Component {
 
     return (
       <FlexContainer column align="start center" classes={{ root: classes.entries }}>
+        
         {/* Action Bar */}
         <FlexContainer align="end center" className={classes.contentActions}>
+          <FlexContainer align="start center">
+            <Typography variant="caption">
+              Filter
+            </Typography>
+            <DropDownButton
+              label="Type"
+              options={Timeline.noteTypeFilterOptions}
+              selected={noteTypeFilter}
+              onChange={this.setNoteTypeFilter}
+            >
+              {__('Filter')}
+            </DropDownButton>
+          </FlexContainer>
+          {noteTypeFilter && noteTypeFilter.id !== 'none' && (
+            <FlexContainer align="start center">
+              <Chip
+                avatar={noteTypeFilter.icon}
+                label={noteTypeFilter.title}
+                onDelete={() => this.setNoteTypeFilter(Timeline.noteTypeFilterOptions[0])}
+              />
+            </FlexContainer>
+          )}
+          {/* Group By */}
           {groupBy === 'type' && (
             <Button onClick={() => this.setState({ groupBy: 'time' })}>
               {__('Group By Time')}
@@ -395,6 +584,71 @@ class Timeline extends React.Component {
             </Button>
           )}
         </FlexContainer>
+
+        {/* Date Range Bar */}
+        <div style={{ width: "100%" }}>
+          {/* DateRange Picker */}
+          <FlexContainer align="end center">
+            <MuiPickersUtilsProvider utils={DateFnsUtils}>
+              <KeyboardDatePicker
+                clearable
+                margin="normal"
+                id="date-picker-dialog"
+                label="From"
+                format="MM/dd/yyyy"
+                value={dateRange.from}
+                onChange={this.handleFromDateChange}
+                InputProps={{
+                  endAdornment: (
+                    <IconButton size="small" onClick={() => this.handleFromDateChange(null)}>
+                      <ClearIcon />
+                    </IconButton>
+                  )
+                }}
+                InputAdornmentProps={{
+                  position: "start"
+                }}
+                KeyboardButtonProps={{
+                  'aria-label': 'change date',
+                }}
+                style={{ width: "200px", marginTop: "0", marginBottom: "10px" , marginRight: "10px" }}
+              />
+              <KeyboardDatePicker
+                clearable
+                margin="normal"
+                id="date-picker-dialog"
+                label="To"
+                format="MM/dd/yyyy"
+                value={dateRange.to}
+                onChange={this.handleToDateChange}
+                InputProps={{
+                  endAdornment: (
+                    <IconButton size="small" onClick={() => this.handleToDateChange(null)}>
+                      <ClearIcon />
+                    </IconButton>
+                  )
+                }}
+                InputAdornmentProps={{
+                  position: "start"
+                }}
+                KeyboardButtonProps={{
+                  'aria-label': 'change date',
+                }}
+                style={{ width: "200px", marginTop: "0", marginBottom: "10px", marginRight: "10px" }}
+              />
+            </MuiPickersUtilsProvider>
+          </FlexContainer>
+        </div>
+
+        <div style={{ width: "100%" }}>
+          {((noteTypeFilter && noteTypeFilter.id !== 'none') || dateRange.from || dateRange.to) && (
+            <FlexContainer align="end center">
+              <Button onClick={this.clearAllFilters}>
+                {__('Clear All Filters')}
+              </Button>
+            </FlexContainer>
+          )}
+        </div>
 
         {/* Error and info banners */}
         <ErrorBanner message={logEntryErrorBannerText} contentGroup />

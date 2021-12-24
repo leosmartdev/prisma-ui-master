@@ -182,7 +182,7 @@ export class Dispatcher {
   };
 
   filterTracks = (filterTracks, manualTrackList) => {
-    console.log(filterTracks, manualTrackList);
+    // console.log(filterTracks, manualTrackList);
     this.handlers.forEach(handler => {
       let show = true;
       let isExist = false;

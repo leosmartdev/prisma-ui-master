@@ -168,10 +168,6 @@ function NavigationBar({
           <ProfileIcon />
         </NavigationBarItem>
 
-        {/* <NavigationBarMenuItem to="/mapconfig" title="Map Config">
-          <PermDataSettingIcon />
-        </NavigationBarMenuItem> */}
-
         <NavigationBarMenuItem elemKey={settingsElemKey} title="Settings" onClick={handleMenuOpen}>
           <SettingsIcon />
         </NavigationBarMenuItem>
@@ -209,11 +205,11 @@ function NavigationBar({
             </NavigationSubMenuItem>
           </Authorization>
 
-          <Authorization classId="RemoteSite">
-            <NavigationSubMenuItem to="/mapconfig" title="Map Config">
+          {/* <Authorization classId="RemoteSite">
+            <NavigationSubMenuItem to="/mapconfig/list" title="Map Config">
               <PermDataSettingIcon />
             </NavigationSubMenuItem>
-          </Authorization>
+          </Authorization> */}
         </Paper>
       </NavigationSubMenu>
     </Paper>
